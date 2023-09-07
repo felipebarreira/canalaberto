@@ -1,0 +1,1031 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Mono:400,700);
+/*-------------------------------------
+Módulo Financeiro
+-------------------------------------*/
+
+/**** listagem/tela principal ****/
+#listagem.listagem-ig td,
+#listagem.listagem-ig th{
+ 	padding: 10px 15px;
+}
+#listagem.listagem-ig tbody td{
+	border-left: 1px dotted #BABABA;
+}
+#listagem.listagem-ig tbody td:first-child{
+	border-left:0;
+}
+
+/* ajuste no tamanho da tabela */
+.lt-vencimento{width:10%;}
+.lt-descricao{width:30%;}
+.lt-cliente{width:15%;}
+.lt-valor{width:15%;}
+.lt-status{width:10%;}
+
+
+/*checkbox da tabela*/
+.ark-checkbox{
+	position: relative;
+
+	position: relative;
+	padding: 15px;
+	max-width: 90px;
+}
+/*checkbox personalizado*/
+.ark-checkbox label {
+	position: relative;
+	padding-left: 20px;
+	font-size: 13px;
+	cursor: pointer;
+}
+.ark-checkbox label:before, .ark-checkbox  label:after {
+	font-family: FontAwesome;
+	font-size: 18px;
+	position: absolute; top: 0; left: 0;
+}
+.ark-checkbox label:before {
+	content: '\f096'; /*unchecked*/
+}
+.ark-checkbox label:after {
+	content: '\f046'; /*checked*/
+	/*checked icon will be hidden by default by using 0 max-width and overflow hidden*/
+	max-width: 0;
+	overflow: hidden;
+	opacity: 0.5;
+	transition: all 0.35s;
+}
+
+/*ocultar original checkbox*/
+.ark-checkbox input[type="checkbox"] {
+	/*display: none;*/
+	width: 100%;
+	height: 100% !important;
+	position: absolute;
+	z-index: 7;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	cursor: pointer;
+}
+/*when the user checks the checkbox the checked icon will animate in*/
+.ark-checkbox input[type="checkbox"]:checked + label:after {
+	max-width: 25px; /*an arbitratry number more than the icon's width*/
+	opacity: 1; /*for fade in effect*/
+}
+
+
+/* personalização de cores */
+.ark-checkbox.pago label{
+	color: #03A903;
+}
+.ark-checkbox.aberto label{
+	color: #A32626;
+}
+.ark-checkbox.pago label span{
+	color: #076C42 !important;
+}
+.ark-checkbox.aberto label span{
+	color: #9D2033 !important;
+}
+
+
+.pl-results{
+	float: left;
+	padding: 10px;
+}
+.pl-results p{
+	float: none !important;
+	margin: 0 !important;
+}
+.pl-results #result-busca{
+	    font-size: 13px;
+    margin-top: 2px !important;
+    color: #767676;
+}
+
+tr.linha-vencida{
+	background-color: #FEE !important;
+}
+tr.linha-pago{
+	background-color: #EDFFEE !important;
+}
+tr.linha-vencida .tb-list-data{
+	color: #C50A0A;
+}
+
+
+.tb-list-desc-tit{
+	font-weight: bold;
+	font-size: 13px;
+	color: #515151;
+}
+.tb-list-desc-subtit{
+	font-size: 11px;
+	color: #515151;
+}
+.tb-list-desc-id{
+	font-size: 11px;
+	color: #515151;
+}
+.tb-ldt-link{
+	text-decoration: none;
+}
+.tb-ldt-link:hover{
+	text-decoration: underline;
+}
+.tb-list-desc-outrasinfo{
+	font-size: 11px;
+	color: #515151;
+
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+}
+.listagem-ig tr:hover .tb-list-desc-outrasinfo{
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+}
+@media screen{
+	.tb-list-desc-outrasinfo{
+		opacity: 0;
+	}
+	.listagem-ig tr:hover .tb-list-desc-outrasinfo{
+		 opacity: 1;
+	}
+}
+@media print{
+	.tb-list-desc-outrasinfo{
+		opacity: 1;
+	}
+	.listagem-ig tr:hover .tb-list-desc-outrasinfo{
+		 opacity: 1;
+	}
+}
+.tb-list-val{
+	font-family: 'Roboto Mono', monospace ;
+	font-size: 12px;
+}
+
+
+.tab-ig-bts a{
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+	background: url("../img/bg-button.png") repeat-x scroll 0 0 #363638;
+	padding: 6px !important;
+	font-size: 16px !important;
+	display: inline-block  !important;
+	margin: 0 2px;
+	color: #fff !important;
+
+	-webkit-transition: all .15s ease-in-out;
+	-moz-transition: all .15s ease-in-out;
+}
+.tab-ig-bts a{
+	-webkit-transition: all .15s ease-in-out;
+	-moz-transition: all .15s ease-in-out;
+}
+
+.tab-ig-bts a.creditcard{
+	background-color: #fff;
+	color: #2f63a4 !important;
+}
+.tab-ig-bts a.boleto{
+	background-color: #fff;
+	color: #a0a42f !important;
+}
+
+.tab-ig-bts a.edit:hover{
+	background-color: #025EA0;
+	color: #fff !important;
+}
+.tab-ig-bts a.exc:hover{
+	background-color: #8E1212;
+	color: #fff !important;
+}
+.tab-ig-bts a.aprov:hover{
+	background-color: #6ab85a;
+	color: #fff !important;
+}
+.tab-ig-bts a.notif:hover{
+	background-color: #D27800;
+	color: #fff !important;
+}
+.tab-ig-bts a.creditcard:hover{
+	background-color: #2f63a4;
+	color: #fff !important;
+}
+.tab-ig-bts a.boleto:hover{
+	background-color: #a0a42f;
+	color: #fff !important;
+}
+
+.listagem-ig tr:hover .tab-ig-bts{
+	opacity: 1;
+	 transform:scale(1,1);
+
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+}
+.tab-ig-bts{
+
+	opacity: 0.0;
+	 transform:scale(0.76,0.76);
+
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+}
+.tab-ig-bts a.notif-selec{
+	background-color: #fff;
+	color: #D27800 !important;
+}
+
+.tab-ig-bts-ativo{
+	opacity: 1;
+}
+.tab-ig-bts-ativo a{
+	background-color: #fff;
+	color: #D27800 !important;
+}
+
+
+.tbt-total-txt{
+	text-align: right;
+}
+.tbr-foot2 td {
+  background-color: #D5DEE2;
+}
+.tbr-foot2 p{
+	font-size: 14px;
+	line-height: 180%;
+}
+
+.tbt-total-txt p .total{
+	background-color: #008000;
+	padding: 4px;
+	color: #FFF;
+	border-radius: 5px;
+	font-size: 15px;
+}
+.tbt-total-val p{
+	font-family: 'Roboto Mono', monospace ;
+}
+.tbt-total-val p .total{
+	font-weight: bold;
+	color: #008000;
+	font-size: 15px;
+}
+.tbt-total-entradas p{
+    font-size: 12px;
+    line-height: 210%;
+}
+
+/*** bts e barra ***/
+.btn-1{
+	font-size:11px;
+	font-weight:normal;
+	line-height:1;
+	text-shadow:0 -1px 1px rgba(0, 0, 0, 0.25);
+	-moz-border-radius:5px 5px 5px 5px;
+	-moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.5);
+	border-radius:5px 5px 5px 5px;
+	box-shadow:0 1px 3px rgba(0, 0, 0, 0.5);
+	background:url("../img/bg-button.png") repeat-x scroll 0 0 #4A4A4A;
+	_background-image: none;
+	border: 0 !important;
+	border-bottom:1px solid rgba(0, 0, 0, 0.25) !important;
+	color:#FFFFFF;
+	cursor:pointer;
+	display:inline-block;
+	padding:6px 10px;
+	position:relative;
+	text-decoration:none;
+	font-family: 'UbuntuCore', Trebuchet MS, Verdana, Helvetica, sans-serif;
+}
+.btn-1:hover{
+	background-color: #444444;
+	text-decoration: none;
+	
+}
+.btn-1 i{
+	margin-right: 5px;
+}
+.btn-2{
+ 	background: url("../img/bg-button.png") repeat-x scroll 0 0 #949494;
+}
+
+#box-rel-acoes{
+	float:right;
+	margin-top: -5px;
+}
+
+#relatorio-info{
+	border: 1px solid #E8E8E8;
+	border-top: 4px solid #5D8599;
+	padding: 10px 10px 0 10px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-bottom: 0;
+	font-size: 12px;
+	background-color: #EDF0F2;
+	color: #6B6B6B;
+}
+#relatorio-info .nome{
+	font-size: 15px;
+	font-weight: bold;
+}
+#relatorio-legenda{
+	margin-top: 5px;
+}
+#relatorio-legenda .spacer{
+	margin-right: 35px;
+}
+
+#frb-container{
+	float: left;
+}
+
+#frb-filtros{
+	float: left;
+}
+#frb-filtros label{
+	min-width: 0 !important;
+}
+#frb-filtros p.eti{
+	margin-bottom: 8px !important;
+}
+
+#frb-link-cancelar{
+	vertical-align: top;
+	line-height: 23px;
+	margin-left: 7px;
+	color: #5D8599;
+	text-transform: uppercase;
+	background-color: transparent !important;
+	font-size: 11px !important;
+}
+#frb-filtro-ativo{
+	background-color: #5D8599;
+	padding: 5px 7px;
+	font-size: 10px;
+	color: #FFF;
+	border-radius: 10px;
+	box-shadow: 0px 0px 5px rgba(93, 133, 153, 0.58);
+}
+#frb-filtro-ativo a{
+	font-size: 10px;
+	color: #FFF;
+	box-shadow: 0px 0px 5px rgba(93, 133, 153, 0.58);
+}
+#box-rel-acoes.frb{
+	margin-top: 0 !important;
+	float: right;
+}
+
+/*** outros estilos ***/
+.tit-table-counterdate{
+	font-size: 14px;
+	color: #345B6E;
+}
+.tit-pl{
+	font-size: 17px;
+	font-weight: bold;
+	color: #5D8599;
+}
+
+/*** abas mês ***/
+#abames-financeiro{
+	    width: 100%;
+    height: 68px;
+    display: block;
+}
+#abames-financeiro div.menor,
+#abames-financeiro ul li{
+	display: block;
+    float: left;
+    width: 12.1428%;
+    box-sizing: border-box;
+    background-color: #F1F2F2;
+    border: 1px solid #E3E3E3;
+    padding: 20px 10px;
+    text-align: center;
+    border-top: 5px solid #C7C7C7;
+    cursor: pointer;
+
+    font-size: 12px;
+    color: #808080;
+
+	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
+	-moz-user-select: none; /* mozilla browsers */
+	-khtml-user-select: none; /* webkit (konqueror) browsers */
+	-ms-user-select: none; /* IE10+ */
+}
+#abames-financeiro div.menor{
+    width: 5%;
+    font-size: 22px;
+    font-weight: normal;
+    padding: 22px 10px;
+}
+#abames-financeiro div.menor:hover,
+#abames-financeiro ul li:hover{
+	border-top-color: #767676;
+	background-color: #F7F7F7;
+}
+#abames-financeiro div.menor.selec,
+#abames-financeiro ul li.selec{
+	border-top-color: #5D8599;
+	background-color: #fff;
+	color: #5D8599;
+}
+#abames-menu-meses li p{
+	text-transform: uppercase;
+}
+#abames-menu-meses li p span{
+	text-transform: none;
+}
+#preListagem.pl-abames{
+	border-top:0;
+	margin-top: 5px;
+}
+#preListagem.pl-abames:after{
+	content:"";
+	display:table;
+	clear:both;
+}
+#preListagem.pl-clear:after{
+	content:"";
+	display:table;
+	clear:both;
+}
+
+#abames-seldata{
+	position: relative;
+}
+#abames-menu-seldata{
+	display:none;
+	width: 350px;
+	height: 28px;
+	border: 1px solid #EAEAEA;
+	position: absolute;
+	right: 100%;
+	top: -5px;
+	background-color: #FFF;
+	z-index: 106;
+	box-shadow: 1px 1px 10px #CACACA;
+	padding: 21px 15px;
+}
+#abames-menu-seldata p span{
+	font-size: 14px;
+	font-weight: normal;
+	color: #8E8B8E;
+	margin: 0 15px;
+	vertical-align: text-top;
+}
+#abames-menu-seldata.abames-hover,
+#abames-menu-seldata.abames-focus{
+	display:block;
+}
+
+
+
+
+#plbFiltro select{
+    display: inline-block !important;
+    width: 112px !important;
+    min-width: 0;
+    vertical-align: baseline;
+    padding: 2px !important;
+    font-size: 11px;
+    background-color: #F1F2F2;
+}
+
+
+/*** css para impressão ***/
+.media-print{
+	display: none;
+}
+@media print {
+	*{
+		font-family: Arial,sans-serif;
+		font-size: 11px;
+	}
+	#col,#header,.tituloFaixa,.sublinksFaixa,#footer,#plBusca{
+		display: none;
+	}
+	#relatorio-box{
+		padding: 2px;
+		overflow-x: inherit;
+	}
+	#listagem, #listagem td{
+		border: 1px solid #797979 !important;
+	}
+	#listagem{
+		padding: 0px;
+	}
+	#listagem td{
+		padding: 5px 6px !important
+	}
+	#listagem thead{
+		background-color: #DADADA;
+	}
+	#listagem thead a{
+		color: #000;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 12px;
+	}
+	.tb-list-desc-tit,
+	.tb-list-desc-tit a {
+		font-weight: bold;
+		font-size: 12px;
+		color: #000;
+		text-decoration: none;
+	}
+
+	#rel-print{
+		display:block;
+	}
+	.media-screen{
+		display:none !important;
+	}
+	.media-print{
+		display:block;
+	}
+	#preListagem{
+		background-color: #fff;
+		border: 2px solid #797979 !important;
+		border-bottom: 2px solid #fff !important;
+		color: #000;
+		padding: 5px 7px;
+	}
+	#preListagem p{
+		margin: 0;
+	}
+	.lt-acoes{
+		display: none;
+	}
+	.tbr-foot2 p{
+		margin: 0;
+	}
+	/** evita que o Fx replique o footer na impressão **/
+	tfoot{
+		display: table-row-group;
+	}
+}
+
+
+/**** editar pagamento ****/
+/*** legado para listagem de arquivos ***/
+.mmFileDesc div{
+	display: none;
+}
+.mmFileDesc p{
+	text-align: right;
+	cursor: pointer;
+	font-size: 10px;
+	margin-top: -25px;
+}
+.mmFileDesc p:hover{
+	text-decoration: underline;
+}
+.modoInline .mmFileDesc p{
+	margin-top: 0 !important;
+}
+
+.mmFileListaArquivos li{
+	position: relative;
+	float: left;
+	width: 50%;
+}
+.mmFileListaArquivos .mmilItem{
+	margin: 5px;
+	box-shadow:1px 1px 2px silver;
+	-moz-box-shadow:1px 1px 2px silver;
+	-webkit-box-shadow:1px 1px 2px silver;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	background-color: #fff;
+	padding: 14px;
+	
+	position: relative;
+}
+.mmFileListaArquivos .ico{
+	vertical-align:middle;
+	margin: 9px 0 0 9px;
+}
+.mmFileListaArquivos a{
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.mmilMiniatura{
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin-right: 5px;
+}
+.mmilBts{
+	float: right;
+}
+.mmfTextos{
+	float: left;
+	margin: 2px 0 0px 0 !important;
+}
+.mmfTitulo a{
+	font-weight: bold;
+	color: #6A6A6A;
+	margin-bottom: 2px;
+}
+.mmilCampo{
+	float: left;
+	width: 95% !important;
+	margin: 0 !important;
+}
+.modoInline .mmFileListaArquivos li{
+	background-color: #fff;
+	overflow: hidden;
+	width: 50% !important;
+}
+.modoInline .mmFileListaArquivos .mmilItem{
+	background-color: #F6F6F6;
+}
+.modoInline .mmFileListaArquivos .ico{
+	width: 28px;
+	height: 28px;
+}
+.modoInline .mmFileListaArquivos a{
+	font-size: 11px !important;
+}
+.modoInline .mmImgDesc p{
+	margin-top: 0 !important;
+}
+.mcNone{
+	border: 0 !important;
+	background: transparent !important;
+	font-size: 12px;
+	box-shadow: none !important;
+	cursor: pointer;
+	color: #5D8599 !important;
+}
+.mcNone::-webkit-input-placeholder {
+   color: #5D8599 !important;
+}
+.mcNone::-moz-placeholder {  /* Firefox 19+ */
+   color: #5D8599 !important; 
+}
+.mcNone:-ms-input-placeholder {  
+   color: #5D8599 !important;
+}
+
+/*** configuração para restrição de exibição
+c/ GingaFrame ***/
+.visualizar-editar .encapButtons{
+	display: none;
+}
+
+
+/*** configuração do checkbox personalizado ***/
+.fpb-checkbox{
+	position: absolute;
+	right: 45px;
+	top: 50%;
+	margin-top: -23px;
+}
+
+.fieldset-pago{
+	background-color: #F7FFF9;
+}
+
+/*** área de boletos ***/
+
+#detalhes-cobranca{
+	margin-top: -20px;
+	padding-bottom: 0px;
+}
+.expande-cobranca{
+	text-align: center;
+	padding: 13px;
+	background-color: #D8E4EA;
+	margin: -16px -15px 0 -15px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+
+	cursor: pointer;
+}
+.expande-cobranca p{
+	font-weight: bold;
+	color: #5D8599;
+}
+.expande-cobranca.contrai{
+	background-color: #ECECEC;
+}
+.expande-cobranca i{
+	-webkit-transition: all 300ms cubic-bezier(0.260,0.860,0.440,0.985);
+	-moz-transition: all 300ms cubic-bezier(0.260,0.860,0.440,0.985);
+	transition: all 300ms cubic-bezier(0.260,0.860,0.440,0.985);
+}
+.expande-cobranca.contrai i{
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.area-detalhes-cobranca{
+	  padding-bottom: 20px;
+	  margin-top: 20px;
+}
+
+.upayment-label-edit{
+	display: inline-block;
+	vertical-align: super;
+	font-size: 13px;
+	color: #5F5F5F;
+	
+}
+.upayment-label-edit.tit{
+	color: #5D8599;
+	font-size: 14px;
+	font-weight: bold;
+}
+.upayment-link-editarvenda{
+	margin-top: -10px;
+	margin-left: 137px;
+}
+.upayment-link-editarvenda a{
+	font-size: 11px;
+	color: #5D8599;
+}
+
+#detalhes-cobranca.fieldset-pago .expande-cobranca{
+	background-color: #E1F5E6;
+}
+#detalhes-cobranca.fieldset-pago .expande-cobranca p{
+	color: #1A801A;
+}
+/* especifico para boletos */
+#boleto-area{
+	padding: 8px;
+	margin: 0 140px;
+
+	border: 1px solid;
+	border-top-color: #B2B2B2;
+	border-left-color: #D6D6D6;
+	border-right-color: #D6D6D6;
+	border-bottom-color: #EBEBEB;
+	-moz-box-shadow: #ddd 0 1px 1px inset;
+	-webkit-box-shadow: #DDD 0 1px 1px inset;
+	box-shadow: #DDD 0 1px 1px inset;
+	border-radius: 3px;
+	background-color: #fff;
+}
+#iframe-boleto{
+	width: 100%;
+	height: 180px;
+}
+
+/**** notificações ****/
+/** legado para listagem de arquivos **/
+.mmFileDesc div{
+	display: none;
+}
+.mmFileDesc p{
+	text-align: right;
+	cursor: pointer;
+	font-size: 10px;
+	margin-top: -25px;
+}
+.mmFileDesc p:hover{
+	text-decoration: underline;
+}
+.modoInline .mmFileDesc p{
+	margin-top: 0 !important;
+}
+
+.mmFileListaArquivos li{
+	position: relative;
+	float: left;
+	width: 50%;
+}
+.mmFileListaArquivos .mmilItem{
+	margin: 5px;
+	box-shadow:1px 1px 2px silver;
+	-moz-box-shadow:1px 1px 2px silver;
+	-webkit-box-shadow:1px 1px 2px silver;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	background-color: #fff;
+	padding: 14px;
+	
+	position: relative;
+}
+.mmFileListaArquivos .ico{
+	vertical-align:middle;
+	margin: 9px 0 0 9px;
+}
+.mmFileListaArquivos a{
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.mmilMiniatura{
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin-right: 5px;
+}
+.mmilBts{
+	float: right;
+}
+.mmfTextos{
+	float: left;
+	margin: 2px 0 0px 0 !important;
+}
+.mmfTitulo a{
+	font-weight: bold;
+	color: #6A6A6A;
+	margin-bottom: 2px;
+}
+.mmilCampo{
+	float: left;
+	width: 95% !important;
+	margin: 0 !important;
+}
+.modoInline .mmFileListaArquivos li{
+	background-color: #fff;
+	overflow: hidden;
+	width: 50% !important;
+}
+.modoInline .mmFileListaArquivos .mmilItem{
+	background-color: #F6F6F6;
+}
+.modoInline .mmFileListaArquivos .ico{
+	width: 28px;
+	height: 28px;
+}
+.modoInline .mmFileListaArquivos a{
+	font-size: 11px !important;
+}
+.modoInline .mmImgDesc p{
+	margin-top: 0 !important;
+}
+.mcNone{
+	border: 0 !important;
+	background: transparent !important;
+	font-size: 12px;
+	box-shadow: none !important;
+	cursor: pointer;
+	color: #5D8599 !important;
+}
+.mcNone::-webkit-input-placeholder {
+   color: #5D8599 !important;
+}
+.mcNone::-moz-placeholder {  /* Firefox 19+ */
+   color: #5D8599 !important; 
+}
+.mcNone:-ms-input-placeholder {  
+   color: #5D8599 !important;
+}
+.regPagto{
+	float:left;
+	width: 100%;
+	border-bottom: 1px SOLID #cecece;
+	line-height: 22px;
+	
+}
+.regPagto span{
+	float: left;
+	width: 120px;
+	font-weight: bold;
+}
+.regPagto strong{
+	float: right;
+	
+}
+li p:last-child{
+	border: none;
+}
+
+/** configuração para restrição de exibição c/ GingaFrame **/
+.visualizar-editar .encapButtons{
+	display: none;
+}
+
+/** previsão de envio **/
+.notif-prev{
+    display: inline-block;
+    vertical-align: middle;
+    font-style: italic;
+    padding: 5px 11px;
+    background-color: #E4E4E4;
+    border-radius: 12px;
+    color: #585858;
+}
+.notif-prev b{
+	font-weight: normal;
+}
+
+
+/** enviar notificações **/
+#encapTabs ul li a{
+	color: #616161 ;
+	text-decoration: none;
+}
+#encapTabs ul li.selec a{
+	color: #5D8599;
+}
+.encap-tabs-link{
+	padding:0 !important;
+}
+.encap-tabs-link a{
+	padding: 12px 30px;
+}
+
+
+/*-------------------------------------
+Tela de pedidos
+-------------------------------------*/
+.font18{
+	font-size: 18px;
+}
+#gfJanela.dark #gfjTopo,
+#gfJanela.dark #gfjBaixo{
+	background-color: #7B7B7B;
+}
+#gfJanela.dark #gfjTextos p{
+	color: #AFAFAF;
+}
+#gfJanela.dark #gfjBaixo{
+	border-top: 1px solid #7B7B7B;
+}
+#gfJanela.dark #gfjBotoes{
+	opacity: 0.35;
+	pointer-events: none;
+}
+#gfJanela.dark #gingaFrameIframe{
+	overflow-y: hidden;
+}
+.visualizar-pagamentos{
+	background-color: #fff;
+}
+.visualizar-pagamentos #frb-container{
+	display:none;
+}
+.visualizar-pagamentos .tb-list-desc-tit{
+	pointer-events: none;
+}
+.noscroll{
+	overflow: hidden;
+}
+.visualizar-confirmarpedido #filtro-rel-box{
+	display: none;
+}
+/*
+.visualizar-pagamentos #listagem td.lt-acoes {
+    opacity: 0;
+    pointer-events: none;
+}
+*/
+.gtLabelView{
+	display: inline-block;
+	vertical-align:super;
+}
+.legend-request-tit{
+
+}
+#mid .smart-reqstatus select,
+#mid .smart-reqstatus input{
+    width: 100% !important;
+    display: inline-block !important;
+    max-width: none;
+    min-width: 0 !important;
+    margin: 0;
+    height: 27px !important;
+
+    border: 1px solid rgba(0, 0, 0, 0);
+    box-shadow: none;
+    background-color: transparent;
+
+    box-sizing: border-box;
+}
+#mid .smart-reqstatus select:focus,
+#mid .smart-reqstatus input:focus{
+	    box-shadow: #80BDFE 0 0 3px;
+    border: solid 1px #5D8599;
+    background-color: #fff;
+}
+
+
+#mid .smart-reqstatus input{
+	font-style: italic;
+	margin-top: 2px;
+}
+#mid .smart-reqstatus input:focus{
+	font-style: normal;
+	font-weight: normal;
+}
+
+#mid .smart-reqstatus select{
+	font-weight: bold;
+	color:#5d8599;
+}
+#mid .smart-reqstatus select:focus{
+
+}

@@ -1,0 +1,62 @@
+#tabela-avaliacao label, #tabela-avaliacao input, #tabela-avaliacao p.eti, #tabela-avaliacao select, #tabela-avaliacao textarea{
+	margin-bottom: 0;
+}
+
+#tabela-avaliacao{
+	border-top: 3px solid #8C9EAB;
+}
+#tabela-avaliacao th{
+	padding: 20px;
+	text-transform: uppercase;
+	color: #006DB8;
+	text-shadow: 1px 1px 0px #EFEFEF;
+	background-color:#D3D3D3;
+}
+#tabela-avaliacao tr td{
+	padding: 15px;
+}
+#tabela-avaliacao tr:nth-child(1n+1) {
+	background: #ECECEC;
+}
+#tabela-avaliacao tr:nth-child(2n+1) {
+	background: #DDD;
+}
+#tabela-avaliacao tr:nth-child(1n+1).ta-linha-rr {
+	background: #ECF4EC;
+}
+#tabela-avaliacao tr:nth-child(2n+1).ta-linha-rr {
+	background: #D7E2D7;
+}
+
+
+.tal-num{
+	width: 80px !important;
+}
+.tal-presenca,
+.tal-pont,
+.tal-aprov,
+.tal-home{
+	text-align: center;
+}
+.tal-presenca input{
+	width: 15px;
+	height: 15px;
+}
+.tal-nome{
+	font-size: 12px;
+}
+
+.ta-linha-nr .tal-num{
+	
+}
+
+#ta-ativa-home{
+
+}
+
+input:focus,input:active{
+	outline-color: rgb(77, 144, 254);
+	outline-offset: -2px;
+	outline-style: auto;
+	outline-width: 5px;
+}

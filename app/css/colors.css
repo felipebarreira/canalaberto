@@ -1,0 +1,38 @@
+@charset "utf-8";
+/*!	
+ * Colors
+ *  -----------------
+ *  Data: 30.06.2020 – Versão: 0.5
+ */
+
+:root {
+    --one-color: #023568;
+    --accent-color: #dd4007;
+}
+
+/*!	
+ *	Arkantas Colors
+ *  -----------------
+ *  for V2
+ *
+ */
+
+:root {
+    --ark-one-light-75: #c0d3df;
+    --ark-one-light-50: #80a6c0;
+    --ark-one: #023568;
+    --ark-one-dark-25: #013a60;
+    --ark-one-dark-50: #012740;
+    --ark-one-25a: rgba(192, 211, 223, 0.25);
+
+    --ark-accent-light-75: #e9e7c8;
+    --ark-accent-light-50: #d4d091;
+    --ark-accent: #dd4007;
+    --ark-accent-dark-25: #d8592a;
+    --ark-accent-dark-50: #545011;
+    --ark-accent-25a: rgba(233, 231, 200, 0.25);
+
+    --ark-input-border: #014d80;
+    --ark-input-shadow: rgba(192, 211, 223, 0.5);
+    --ark-input-shadow-25: rgba(192, 211, 223, 0.25);
+}

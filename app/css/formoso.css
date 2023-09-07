@@ -1,0 +1,434 @@
+@charset "UTF-8"; 
+/*!	
+ *	Projeto Codenome Formoso
+ *  -----------------
+ *	Desenvolvido por Appx.Digital < appx.digital >
+ *  Autor: Bruno Guerreiro < brunoguerreiro@appx.com.br >
+ *	Data: 30.06.2021 - Versão: 2
+ *
+ *  codificado a mão, em {são paulo} 
+ */
+
+
+/*-------------------------------------
+Base
+-------------------------------------*/
+/*** genéricos e resets ***/
+html,body{
+	background-color: #ffffff;
+	font-size:10px;
+	font-family: "Open Sans", Arial, sans-serif;
+}
+body{
+	
+}
+p{
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 1.35rem;
+	line-height: 140%;
+	letter-spacing: 0.2px;
+}
+strong, b{
+	font-weight: bold;
+}
+em{
+	font-style: italic;
+}
+p code {
+	padding: 2px 4px;
+	color: #C7254E;
+	background-color: #FAFAFC;
+	white-space: nowrap;
+	border-radius: 4px;
+	font-family: courier, monospace;
+	border: 1px solid #E3E4E7;
+	border-radius: 3px;
+}
+ul li{
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 1.25rem;
+	line-height: 89%;
+}
+/*** wrappers ***/
+.wrap{
+	margin: 0 auto;
+	width: 1200px;
+}
+
+
+/*-------------------------------------
+Variáveis
+-------------------------------------*/
+
+
+
+ /*-------------------------------------
+Overrides
+-------------------------------------*/
+/*** override arkantas ***/
+input, select, textarea,
+.btn{
+	outline: 0;
+}
+
+
+/*** magnific popup ***/
+.mfp-container{
+	background-color: rgba(35, 72, 150, 0.6);
+}
+
+
+/*-------------------------------------
+Smooth transition
+-------------------------------------*/
+ .all{
+	opacity: 0;
+}
+.loaded .all{
+    animation: page-fade 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.unloading  .all{
+    animation: page-fade-out 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes page-fade {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+@keyframes page-fade-out {
+    0% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+
+/*-------------------------------------
+Estrutura geral
+-------------------------------------*/
+
+/*** estrutura principal ***/
+.formoso-all{
+	width: 100%;
+}
+header{
+	width: 100%;
+	height: 10rem;
+	display: flex;
+	align-items: center;
+	padding: 0 4.0rem;
+}
+.formoso-logo{
+	height: 100%;
+    width: 20rem;
+}
+main{
+}
+
+/*** ajustes do form ***/
+.formoso .ark-form label b{
+	font-size: 1.6rem;
+	line-height: 1.2em;
+}
+.formoso em{
+	margin: 0 0 1rem 0;
+    display: inline-block;
+	font-size: 1.5rem;
+}
+
+
+/*** welcome ***/
+.formoso-welcome{
+	padding: 4rem 0;
+	text-align: center;
+}
+.formoso-welcome h1{
+	color: var(--one-color);
+	font-weight: bold;
+}
+.formoso-welcome h2{
+	color: var(--accent-color);
+}
+.formoso-welcome .poetry{
+	padding: 2.0rem 0;
+}
+.formoso-welcome .poetry p{
+	font-size: 1.65rem;
+	line-height: 140%;
+}
+
+
+/*** formoso banner ***/
+.formoso-banner{
+	margin: 2.5rem auto;
+}
+.formoso-banner__slider div{
+	border-radius: 2.2rem;
+	overflow: hidden;
+}
+.formoso-banner__slider img{
+	width: 100%;
+}
+
+.formoso-banner__slider .slick-dots{
+	margin: 1rem 0;
+    padding: 0 4.0rem;
+	position: relative;
+	bottom: unset;
+
+}
+.formoso-banner__slider .slick-dots li{
+	width: auto;
+}
+.formoso-banner__slider .slick-dots li button{
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	width: 10px;
+	height: 10px;
+	text-indent: -999px;
+	transition: all .3s ease-in;
+}
+.formoso-banner__slider .slick-dots li.slick-active button{
+	background-color: var(--one-color);
+	opacity: 1;
+	width: 20px;
+	transition: all .5s ease-out;
+}
+
+
+/*** end ***/
+.formoso-end{
+	padding: 3rem 0;
+}
+
+
+/*** items ***/
+.formoso-items{
+}
+
+.formoso-items__spacer{
+	width: 100%;
+	height: 30vh;
+}
+.formoso-item{
+	padding: 0.5rem 0;
+	opacity: 1.5;
+	width: 100%;
+	height: 100%;
+}
+.formoso-item:hover{
+	opacity: 1;
+}
+
+/*** steps ***/
+.formoso-step{
+	text-align: center;
+}
+.formoso-step p{
+	font-size: 2.2rem;
+	color: slategray;
+}
+.formoso-step p strong{
+	color: var(--one-color);
+}
+
+
+
+/*-------------------------------------
+Componentes
+-------------------------------------*/
+
+/*** formoso list-wrap ***/
+.formoso .list-wrap{
+	margin: 1.0rem 0;
+}
+.formoso .list-wrap label{
+	font-size: 1.5rem;
+}
+/*** formoso listgrid ***/
+.formoso-listgrid{
+	display: flex;
+	margin: 2.5rem -0.5rem;
+}
+.formoso-listgrid__item{
+	box-shadow: 0 0 1.5rem rgba(0, 0, 0, .2);
+	background-color: #fff;
+	padding: 2.0rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all .3s ease-in;
+	flex-basis: 0;
+	flex-grow: 1;
+	flex-wrap: nowrap;
+	margin: 0 1rem;
+}
+.formoso-listgrid__item:hover{
+	transform: scale(1.1);
+	transition: all .5s ease;
+}
+.formoso-listgrid__item label{
+	text-align: center;
+	width: 100%;
+	font-size: 1.5rem;
+}
+.formoso-listgrid__item .emoji{
+	font-size: 4.5rem;
+	padding: 2.0rem 0;
+}
+.formoso-listgrid__item.--selec{
+	background-color:  var(--accent-color);
+	color: #fff;
+}
+
+/*** variação escala ***/
+.formoso-listgrid.--escala{
+
+}
+.formoso-listgrid.--escala .number{
+	font-size: 3.0rem;
+}
+
+
+/*** progress ***/
+.formoso-progress{
+	width: 100%;
+	height: 0.5rem;
+	background-color: var(--one-color);
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+.formoso-progress__line{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.formoso-progress__current{
+	position: absolute;
+	height: 100%;;
+	top: 0;
+	left: 0;
+	width: var(--scroll);
+	background-color: var(--accent-color);
+
+	transition: all 2.5s ease;
+}
+
+
+
+/*** formoso counter ***/
+.formoso-counter__textarea{
+	width: 100%;
+	position: relative;
+}
+.formoso-counter__textarea textarea{
+	width: 100%;
+}
+.formoso-counter__progress{
+	position: absolute;
+    width: calc( 100% - .2rem );
+    left: .1rem;
+    bottom: 0.3rem;
+    height: .4rem;
+    border: 0;
+    background: transparent;
+	overflow: hidden;
+}
+.formoso-counter__progress span{
+	display: block;
+	width: 0;
+	background-color: var(--accent-color);
+	height: 100%;
+
+	transition: all .5s ease;
+}
+.formoso-counter__info{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	vertical-align: middle;
+	padding: .5rem 0;
+}
+.formoso-counter__info p{
+	margin: 0 !important;
+}
+.formoso-counter__label p{
+	animation-delay: 3s;
+    background-color: var(--ark-one-light-75);
+    padding: 0.4rem 1rem;
+    color: var(--one-color);
+    border-radius: 1.5rem;
+    border-top-left-radius: 0;
+    font-size: 1.3rem;
+}
+.formoso-counter__count{
+	font-weight: bold;
+	color: var(--accent-color);
+}
+.formoso-counter__count span.total:before{
+	content: "/";
+}
+.formoso-counter.--no-max.--sufficient .formoso-counter__count span.total,
+.formoso-counter.--no-max.--adequate .formoso-counter__count span.total{
+	display: none;
+}
+
+
+/*** layout antiquado ***/
+.formoso-main.--antique{
+    padding: 0 5.0rem;
+    background: rgb(236 236 236 / 80%);
+    border-radius: 2.2rem;
+    margin: 2.5rem auto 5rem auto;
+}
+
+
+/*** responsividade ***/
+@media (max-height: 800px){
+	/** monitores de notebook **/
+}
+
+@media (max-width: 1200px) and (min-width: 992px){
+	/** desktops menores **/
+}
+
+@media  (max-width: 991px){
+	/** tablets e mobile **/
+
+
+	.formoso-main.--antique {
+		padding: 0 3rem;
+		margin: 2.5rem auto 5rem auto;
+	}
+	.formoso-listgrid {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.formoso-listgrid__item{
+		flex-basis: 100%;
+		padding: 1rem;
+		 margin: 1rem 0;
+	}
+
+
+
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+	/** tablets **/
+}
+
+@media (max-width: 767px){
+	/** mobile **/
+	.wrap{
+		width: 90%;
+	}
+}

@@ -1,0 +1,803 @@
+@charset "utf-8";
+
+
+ /*-------------------------------------
+Adicionar/editar pagamentos
+-------------------------------------*/
+.ark-adma__scheme--original fieldset{
+    transition: all .25s ease;
+}
+.ark-adma__scheme--original.fieldset-collap fieldset{
+    border: 0;
+    padding: 0;
+
+    transition: all .25s ease;
+}
+.ark-adma__scheme--original.fieldset-collap fieldset legend{
+    display: none;
+}
+
+ /*-------------------------------------
+Listar pagamentos
+-------------------------------------*/
+
+/*** abas meses ***/
+.tab-calendar{
+    margin: 25px 0;
+    margin-bottom: 0;
+}
+
+.tab-calendar__tabs{
+    display: grid;
+    grid-template-columns: 1fr 14fr 1fr 1fr;
+}
+
+.tab-calendar__meses{
+    display: flex;
+    margin-bottom: 0;
+}
+.tab-calendar__meses li{
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.tab-calendar__menor,
+.tab-calendar__meses li{
+    border: 1px solid #E3E3E3;
+    border-top: 5px solid #C7C7C7;
+    text-align: center;
+    cursor: pointer;
+    height: 90px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all .25s ease-out;
+
+	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
+	-moz-user-select: none; /* mozilla browsers */
+	-khtml-user-select: none; /* webkit (konqueror) browsers */
+	-ms-user-select: none; /* IE10+ */
+}
+.tab-calendar__menor:hover,
+.tab-calendar__meses li:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-top-color: #767676;
+
+    transition: all .5s ease;
+}
+.tab-calendar__menor.selec,
+.tab-calendar__meses li.selec{
+    background-color: #fff;
+    border-top-color: var(--accent-color);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.tab-calendar__menor p,
+.tab-calendar__meses li p{
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    line-height: 120%;
+    font-weight: normal;
+}
+.tab-calendar__menor i{
+    font-size: 1.9rem;
+    color: gray;
+}
+.tab-calendar__menor:hover p,
+.tab-calendar__menor:hover i,
+.tab-calendar__meses li:hover p{  
+    font-weight: bold;
+    color: #000;
+}
+.tab-calendar__menor.selec p,
+.tab-calendar__menor.selec i,
+.tab-calendar__meses li.selec p{  
+    font-weight: bold;
+}
+.tab-calendar__meses li:active,
+.tab-calendar__menor.--setas:active,
+.tab-calendar__menor.--seletor:active{
+    background-color:var(--accent-color);
+    color: #fff;
+}
+.tab-calendar__menor p,
+.tab-calendar__menor p i{
+    pointer-events: none;
+}
+
+
+/*** tabela de listagem de pagamentos ***/
+#table-payments{
+    margin: 0;
+     transition: all .3s ease;
+}
+#table-payments thead th{
+    text-align: left;
+}
+#table-payments thead th a{
+    color: #fff;
+}
+#table-payments tbody tr{
+    transition: all .25s ease-in-out;
+}
+#table-payments tbody tr:hover{
+    transform: scale(1.01);
+    box-shadow: 0 4px 18px 2px rgba(83,117,153,.5);
+
+    transition: all .8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+#table-payments tbody td{
+    line-height: 140%;
+}
+#table-payments.--loading{
+    opacity: 0.5;
+    transition: all .5s ease-in;
+    cursor: wait;
+}
+#table-payments.--loading tbody,
+#table-payments.--loading tfoot{
+    filter: blur(2px);
+    transition: all .5s ease-in;
+}
+.lt-body-descricao{
+    line-height: 140%;
+}
+.tb-list-desc-tit{
+    font-size: 1.45rem;
+}
+.tb-list-desc-tit a{
+    font-weight: bold;
+}
+.tb-list-desc-subtit{
+	font-size: 1.455rem;
+}
+.tb-list-desc-id,
+.tb-list-desc-outrasinfo{
+    color: #656565;
+    font-size: 1.15rem;
+}
+.lt-checkbox{
+    text-align: center;
+}
+.lt-body-checkbox{
+    text-align: center !important;
+}
+.lt-checkbox{ width: 5%; }
+.lt-vencimento{ width: 8%; }
+.lt-descricao{ width: 25%; }
+.lt-cliente{ width: 15%; }
+.lt-valor{ width: 10%; }
+.lt-status{ width: 12%; }
+.lt-icons{ width: 5%; }
+.lt-acoes{ width: 10%; }
+
+
+.table-remittances  .lt-vencimento{ width: 10%; }
+.table-remittances .lt-banco{ width: 15%; }
+.table-remittances .lt-cliente{ width: 55%; }
+.table-remittances .lt-icons{ width: 10%; }
+.table-remittances .lt-acoes{ width: 10%; }
+
+.table-receptions  .lt-vencimento{ width: 10%; }
+.table-receptions .lt-banco{ width: 15%; }
+.table-receptions .lt-cliente{ width: 55%; }
+.table-receptions .lt-icons{ width: 10%; }
+.table-receptions .lt-acoes{ width: 10%; }
+
+.tab-ig-bts {
+    opacity: 0.0;
+    transform: scale(0.76);
+}
+.tab-ig-bts-ativo {
+    opacity: 1;
+}
+#table-payments tbody tr:hover .tab-ig-bts{
+    opacity: 1.0;
+    transform: scale(1);
+
+    transition: all .95s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.lt-body-valor{
+   /* text-align: right ; */
+}
+.tb-list-val{
+    font-family: Consolas, Monaco, monospace;
+    font-size: 1.4rem;
+}
+
+.tb-list-val__transaction.--green{ color: #4d8816; }
+.tb-list-val__transaction.--red{ color: #e74c3c; }
+
+.tb-list-val__balance{ font-weight: bold; }
+.tb-list-val__balance.--positive{ color: #118ace; }
+.tb-list-val__balance.--negative{ color: #e74c3c; }
+
+.tab-finan__visualizar{
+    text-align: center;
+    width: 100%;
+    display: block;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    transition: all .25s ease-in-out;
+}
+#table-payments tbody tr:hover .tab-finan__visualizar{
+    /*height: 35px;
+    opacity: 1;
+    transition: all .8s cubic-bezier(0.19, 1, 0.22, 1);*/
+}
+.tbr-foot2{
+    background: #e4e4e4;
+}
+.tbt-total-txt p{
+    text-align: right;
+}
+.tbt-total-txt p .total{
+    color: #fff;
+    background-color: var(--dark-color);
+    display: inline-block;
+    padding: 1px 10px;
+    border-radius: 10px 10px;
+}
+.tbt-total-txt p,
+.tbt-total-val p,
+.tbt-total-entradas p{
+	line-height: 200%;
+	font-size: 1.35rem;
+}
+.tbt-total-val p{
+    font-family: Consolas, Monaco, monospace;
+    font-size: 1.45rem;
+}
+.tbt-total-val .total{
+    color: var(--dark-color);
+    font-weight: bold;
+}
+.tbt-total-val .pago{
+    color: #118a7a;
+}
+.tbt-total-val .falta{
+    color: #C50A0A;
+}
+.total-sparkline{
+    display: inline-block;
+    vertical-align: middle;
+}
+.tbr-foot3{
+    background: #d4d4d4;
+}
+.tbt-foot3__label{
+    text-align: right;
+}
+
+/*** tabela de extrato ***/
+.table-payments--extract .lt-valor,
+.table-payments--extract .lt-status{
+    text-align: right !important;
+}
+.tbr-foot-extract,
+#table-payments tbody .tbr-foot-extract{
+    background: #d4d4d4;
+}
+.tbr-foot-extract__label{
+    text-align: right;
+}
+#table-payments tbody .tbr-foot-extract__label{
+    text-align: left !important;
+}
+.tbr-foot-extract__value{
+    text-align: right;
+}
+.tbr-foot-extract__value span{
+    font-weight: bold;
+    display: inline-block;
+    padding: 0.2rem 1.4rem;
+    border-radius: 1.0rem;
+    margin-right: -1.4rem;
+}
+.tbr-foot-extract:hover .tbr-foot-extract__label span{
+    font-weight: bold;
+    transition: all .5s ease-out;
+}
+.tbr-foot-extract:hover .tbr-foot-extract__value span{
+    background-color: #fff;
+    transition: all .5s ease-out;
+}
+.lt-body-valor.--ta-right{
+    text-align: right;
+}
+.tbr-foot-extract__value{
+    font-family: Consolas, Monaco, monospace;
+    font-size: 1.4rem;
+}
+.tbr-foot-extract.--revenue .tbr-foot-extract__value{ color: #4d8816 }
+.tbr-foot-extract.--expense .tbr-foot-extract__value{ color: #e74c3c }
+.tbr-foot-extract.--balance .tbr-foot-extract__value{
+    font-weight: bold;
+} 
+.tbr-foot-extract.--balance .--positive{ color: #43bd45; }
+.tbr-foot-extract.--balance .--negative{ color: #ab1d1d; }
+.tbr-foot-extract.--final .--positive{ color: #118ace; }
+.tbr-foot-extract.--final .--negative{ color: #e74c3c; }
+
+.lt-body-extract-viewtransaction a{
+    opacity: 0;
+    transform: scale(0.5);
+}
+.table-payments--extract tbody tr:hover .lt-body-extract-viewtransaction a{
+    opacity: 1;
+    transform: scale(1);
+    transition: all .2s ease-out;
+}
+
+
+/** linhas da tabela **/
+.linha-vencida{
+    background-color:rgba(250, 223, 223, 0.75)  !important;
+}
+.linha-pago{
+    background-color:rgba(227, 255, 233, 0.75) !important;
+}
+.linha-selec{
+    background-color:rgba(255, 248, 182, 0.75) !important;
+}
+.linha-selec.linha-pago{
+    background-color:rgba(229, 255, 182, 0.75) !important;
+}
+.linha-selec.linha-vencida{
+    background-color:rgba(255, 223, 182, 0.75) !important;
+}
+.linha-vencida:not(.linha-pago) .tb-list-data{
+    color: #C50A0A;
+}
+
+#table-payments.--remessa-mode .linha-pago .lt-body-checkbox input,
+#table-payments.--remessa-mode .linha-vencida .lt-body-checkbox input{
+    display: none;
+}
+
+
+/*** saldo ***/
+.finance-saldo-label{
+    display: inline-block;
+    vertical-align: middle;
+
+    
+    position: relative;
+    overflow: hidden;
+
+}
+.finance-saldo-label.--loading span{
+    filter: blur(2px);
+    cursor: wait;
+
+    transition: all .2s ease;
+}
+.finance-saldo-label:after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -100%;
+    width: 100%;
+    height: 150%;
+    opacity: 0;
+
+    background: rgba(255, 255, 255, 0.13);
+    background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0.13) 0%,
+    rgba(255, 255, 255, 0.13) 77%,
+    rgba(255, 255, 255, 0.5) 92%,
+    rgba(255, 255, 255, 0.0) 100%
+    );
+}
+.finance-saldo-label.--active:after {
+    opacity: 1;
+    left: 100%;
+    transition-property: left, top, opacity;
+    transition-duration: 0.7s, 0.7s, 0.15s;
+    transition-timing-function: ease;
+}
+
+
+.dropdown-seletor-conta span.pill{
+    float: right;
+}
+
+/*** área de boletos ***/
+.boleto-iframe-area{
+    width: 100%;
+    height: 70px;
+}
+.input-especial-notif{
+    width: 70px;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+.label-especial-notif{
+    margin: 1px 0;
+    display: block;
+}
+
+/*** adicionar pagamento ***/
+.selectize-control .selectize-input.disabled {
+    opacity: .75;
+    background-color: #d2d2d2;
+    cursor: not-allowed !important;
+}
+
+/*** ignite switch - ignite candidate ***/
+.switch {
+    display: none !important;
+}
+.switch + label {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #78768d;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 15px;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 1.4rem;
+}
+.switch + label::before,
+.switch + label::after {
+  content: '';
+  display: block;
+}
+.switch + label::before {
+    background-color: #2c2c2c;
+    border-radius: 500px;
+    height: 20px;
+    margin-right: 5px;
+    -webkit-transition: background-color 0.125s ease-out;
+    transition: background-color 0.125s ease-out;
+    width: 40px;
+}
+.switch + label::after {
+    background-color: #fff;
+    border-radius: 100%;
+    box-shadow: 0 3px 1px 0 rgba(37, 34, 71, 0.05), 0 2px 2px 0 rgba(37, 34, 71, 0.1), 0 3px 3px 0 rgba(37, 34, 71, 0.05);
+    height: 18px;
+    left: 1px;
+    position: absolute;
+    top: 1px;
+    -webkit-transition: -webkit-transform 0.125s ease-out;
+    transition: -webkit-transform 0.125s ease-out;
+    transition: transform 0.125s ease-out;
+    transition: transform 0.125s ease-out, -webkit-transform 0.125s ease-out;
+    width: 18px;
+}
+.switch + label .switch-x-text {
+    display: block;
+    margin-right: .3em;
+}
+.switch + label .switch-x-toggletext {
+    display: block;
+    font-weight: bold;
+    height: 15px;
+    overflow: hidden;
+    position: relative;
+    width: 100px;
+}
+.switch + label .switch-x-unchecked,
+.switch + label .switch-x-checked {
+    left: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transition: opacity 0.125s ease-out, -webkit-transform 0.125s ease-out;
+    transition: opacity 0.125s ease-out, -webkit-transform 0.125s ease-out;
+    transition: transform 0.125s ease-out, opacity 0.125s ease-out;
+    transition: transform 0.125s ease-out, opacity 0.125s ease-out, -webkit-transform 0.125s ease-out;
+}
+.switch + label .switch-x-unchecked {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+}
+.switch + label .switch-x-checked {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+}
+.switch + label .switch-x-hiddenlabel {
+    position: absolute;
+    visibility: hidden;
+}
+.switch:checked + label::before {
+  background-color: var(--accent-color);
+}
+.switch:checked + label::after {
+    -webkit-transform: translate3d(20px, 0, 0);
+    transform: translate3d(20px , 0, 0);
+}
+.switch:checked + label .switch-x-unchecked {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+}
+.switch:checked + label .switch-x-checked {
+    opacity: 1;
+    color: var(--accent-color);
+    -webkit-transform: none;
+    transform: none;
+}
+.switch:active + label::after {
+    opacity: 0.8;
+}
+
+
+/** tamanhos **/
+/* pequeno */
+.ignite-switch.--small .switch + label::before {
+    height: 15px;
+    width: 25px;
+}
+.ignite-switch.--small  .switch + label::after {
+    height: 13px;
+    width: 13px;
+}
+.ignite-switch.--small .switch:checked + label::after {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px , 0, 0);
+}
+/* grande */
+.ignite-switch.--lg .switch + label::before {
+    height: 30px;
+    width: 50px;
+}
+.ignite-switch.--lg  .switch + label::after {
+    height: 27px;
+    width: 27px;
+}
+.ignite-switch.--lg .switch:checked + label::after {
+    -webkit-transform: translate3d(21px, 0, 0);
+    transform: translate3d(21px , 0, 0);
+}
+
+
+/** cores **/
+.ignite-switch.--green .switch:checked + label::before { background-color: #118a7a; }
+.ignite-switch.--green .switch:checked + label .switch-x-checked { color: #118a7a; }
+
+.ignite-switch.--red .switch:checked + label::before { background-color: #DE2125; }
+.ignite-switch.--red .switch:checked + label .switch-x-checked { color: #DE2125; }
+
+
+
+/*** notificações ***/
+.notif-prev {
+    vertical-align: middle;
+    background-color: #dadada;
+    padding: 7px 15px 2px 15px;
+    line-height: normal;
+    border-radius: 14px;
+    color: var(--accent-color);
+}
+
+
+/** calendario de preview **/
+.calendars-notifs{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 20px;
+}
+.calendars-notifs .calendar-container{
+	pointer-events: none;
+}
+.calendar-container {
+	position: relative;
+	width: 100%;
+}
+
+.calendar-container .calendar-header {
+	border-radius: 1em 1em 0 0;
+	background: #3f5375;
+	color: #fff;
+	padding: 13px 15px;
+}
+.month {
+	font-size: 1.35rem;
+	line-height: 1em;
+	text-transform: lowercase;
+}
+
+.calendar {
+	background: #fbfbfb;
+	border-radius: 0 0 1em 1em;
+	-webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+	box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+	color: #555;
+	padding: 15px;
+	width: 100%;
+}
+
+.calendar thead {
+	color: #e66b6b;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.calendar thead td{
+	font-family: "Consolas","Courier New", monospace;
+	font-size: 11px;
+}
+
+.calendar td {
+	padding: 8px 0;
+	text-align: center;
+	cursor: pointer;
+}
+
+.calendar tbody td{
+	border: 1px solid #fbfbfb;
+}
+.calendar tbody td:hover {
+	background: #cacaca;
+	color: #fff;
+}
+.ring-left,
+.ring-right {
+	position: absolute;
+	top: 30px;
+}
+
+.ring-left { left: 2em; }
+.ring-right { right: 2em; }
+
+.ring-left:before,
+.ring-left:after,
+.ring-right:before,
+.ring-right:after {
+	background: #fff;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+	box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+	content: "";
+	display: inline-block;
+	margin: 3px;
+	height: 18px;
+	width: 8px;
+}
+
+.calendar .today {
+	color: #e66b6b;
+	border: 1px solid #e66b6b;
+}
+.calendar .selec{
+	color: #5d8599;
+	border: 1px solid #5d8599;
+}
+.prev-month,
+.next-month {
+	color: #cacaca;
+}
+
+/* personalizacao de cores */
+.calendar .antes{
+	background-color: #ecffda;
+	color: #4d8816;
+}
+.calendar .dia{
+	background-color: #ffecd3;
+	color: #f38a00;
+}
+.calendar .depois{
+	background-color: #ffd5db;
+	color: #f30020;
+}
+
+
+
+
+
+/*** selectize de contatos ***/
+.selectize-control.contacts .selectize-input > div {
+    padding: 1px 10px;
+    font-size: 13px;
+    font-weight: normal;
+    -webkit-font-smoothing: auto;
+    color: #f7fbff;
+    text-shadow: 0 1px 0 rgba(8,32,65,0.2);
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+}
+.selectize-control.contacts .selectize-input > div.active {
+
+}
+.selectize-control.contacts .selectize-input > div .email {
+    opacity: 0.8;
+}
+.selectize-control.contacts .selectize-input > div .name + .email {
+    margin-left: 5px;
+}
+.selectize-control.contacts .selectize-input > div .email:before {
+    content: '<';
+}
+.selectize-control.contacts .selectize-input > div .email:after {
+    content: '>';
+}
+.selectize-control.contacts .selectize-dropdown .caption {
+    font-size: 12px;
+    display: block;
+    color: #a0a0a0;
+}
+
+
+/*** fieldset de busca ***/
+.fieldset-sarch-payments{
+    margin: 25px 0;
+}
+/*** fieldset de gerar remessas ***/
+.table-payments__fieldset-remessa{
+    border: 2px solid #d0d8e4;
+    padding: 8px 15px;
+    margin: 10px 0;
+    border-radius: 3px;
+}
+.--fieldset-finance-bordered{
+    border: 2px solid #d0d8e4;
+    padding: 8px 15px;
+    margin: 10px 0;
+    border-radius: 3px;
+}
+
+
+ /*-------------------------------------
+Dashboard
+-------------------------------------*/
+.finance-tit{
+    text-align: center;
+    font-size: 2.0rem;
+    margin: 2.5rem 0 1.5rem;
+    color: var(--dark-color);
+    background-image: linear-gradient(180deg, var(--dark-color) , var(--dark-color2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.finance-graph__panel{
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    width: 100%;
+    padding: 3.0rem;
+}
+.finance-graph__panel .finance-tit{
+    text-transform: uppercase;
+    font-size: 1.65rem;
+}
+.finance-graph__search{
+    padding: 1.5rem 0 0;
+}
+.graph-panel__subtit-previsto{
+    text-align: center;
+    margin-top: 1.5rem;
+}
+.main-bar--dashboard-payment .finance-saldo-label{
+    display: none;
+}
+.finance-graph__search legend{
+    text-align: center;
+}
+.dashpanel__tile--balanco .val.--green{
+    /* color: #4CAF50 ; */
+}
+.dashpanel__tile--balanco .val.--red{
+    color: #e74c3c;
+}

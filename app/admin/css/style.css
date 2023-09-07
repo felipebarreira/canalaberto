@@ -1,0 +1,438 @@
+@charset "utf-8";
+
+
+
+.pill.pill-purple {
+	background-color: #331A63;
+}
+
+a.pill-purple:hover {
+	background-color: #331A63;
+}
+
+
+.header-links {
+	float: right;
+	margin-top: -64px;
+	right: 1px;
+	padding: 15px;
+}
+
+.header-links__avatar {
+	width: 34px;
+	margin-left: 14px;
+	float: right;
+	border-radius: 100%;
+}
+
+.header-links__nome {
+	font-size: 1.4rem;
+	color: #3f5375;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 3px;
+}
+
+.header-links__voltar,
+.header-links__logout {
+	font-size: 1.1rem;
+	color: #000;
+}
+
+input[type=date] {
+	padding: 0.4464em;
+	/* Arkantas candidate */
+}
+
+
+/*-------------------------------------
+Adicionar mais (Ignite candidate)
+-------------------------------------*/
+.ark-adma__scheme fieldset {
+	border: 2px solid #d0d8e4;
+	padding: 10px 15px;
+	margin: 10px 0;
+	border-radius: 3px;
+}
+
+.ark-adma__scheme fieldset {
+	margin-top: 0;
+}
+
+.ark-adma__scheme legend {
+	color: #000;
+	font-size: 1.15rem;
+}
+
+.ark-adma__scheme--original .ark-adma__delete {
+	display: none;
+}
+
+
+/*-------------------------------------
+Dropdown (Arkantas candidat)
+-------------------------------------*/
+
+.ark-dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 400;
+	opacity: 0;
+
+	/*skin*/
+	background-color: #fff;
+	width: calc(100% + 100px);
+	border-radius: 3px;
+	box-shadow: 0 4px 18px 2px var(--soft-shadow);
+
+	transition: all .6s ease;
+}
+
+.ark-dropdown.right .dropdown {
+	left: initial;
+	right: 0;
+}
+
+.ark-dropdown.top .dropdown {
+	top: initial;
+	bottom: 100%;
+}
+
+.ark-dropdown.hoverable:hover .dropdown {
+	display: block;
+	opacity: 1;
+	transition: all .6s ease;
+}
+
+.ark-dropdown.hoverable:hover .dropdown,
+.ark-dropdown.active .dropdown {
+	display: block;
+	opacity: 1;
+	transition: all .6s ease;
+}
+
+.ark-dropdown__menu li {
+	text-align: left;
+	width: 100%;
+	display: inline-block;
+}
+
+.ark-dropdown__menu li a {
+	color: #4e4e4e;
+	font-size: 1.20rem;
+	width: 100%;
+	padding: 15px 15px;
+	display: inline-block;
+	text-shadow: none !important;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.ark-dropdown__menu li:hover a {
+	background-color: #f9f9f9;
+	color: #1db2e8;
+}
+
+.ark-dropdown__menu li.tit {
+	color: #425b88;
+	font-size: 1.22rem;
+	width: 100%;
+	padding: 10px 15px;
+	display: inline-block;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color: #e9ecf1;
+	border-top: 1px solid #dee3ea;
+	margin-top: 10px;
+}
+
+.ark-dropdown__menu li.tit:first-child {
+	margin-top: 0;
+	border-top: 0;
+}
+
+.ark-dropdown__menu hr {
+	border: 1px solid #e9ecf1;
+}
+
+
+/*-------------------------------------
+Seletor de contexto (Ignite candidate)
+-------------------------------------*/
+#content-header {
+	position: relative;
+}
+
+#seletor-contexto {
+	position: absolute;
+	right: 20px;
+	top: 15px;
+}
+
+#seletor-contexto select {
+	width: auto;
+}
+
+
+/*-------------------------------------
+Molde Responsivo
+-------------------------------------*/
+/*** adaptações responsiva ***/
+@media (max-width: 1200px) and (min-width: 992px) {
+	/** desktop menor **/
+
+}
+
+@media (max-width: 991px) {
+	/** tablets e mobile **/
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	/** tablets **/
+
+}
+
+@media (max-width: 767px) {
+	/** mobile **/
+
+}
+
+
+/*-------------------------------------
+Personalizações para projeto Essential
+-------------------------------------*/
+
+#login-container {
+	background-image: linear-gradient(180deg, rgba(0, 25, 70, 0.4), rgba(60, 127, 169, 0.4));
+}
+
+#login-body {
+	background-image: url(../img/bg_login.jpg?v=10052019) !important;
+}
+
+.login__outdoor {
+	background-image: url(../img/bg_login2.jpg?v=10052019) !important;
+}
+
+.login__rights {
+	background: rgba(44, 44, 138, 0.85);
+}
+
+#header-logo img {
+	max-height: 50px;
+	display: inline-block;
+	width: 100%;
+	;
+}
+
+
+
+/** disponibilidade de aulas **/
+.tb-agendateacher .disponivel {
+	background-color: #4bb54b;
+	color: #fff;
+}
+
+.tb-agendateacher .emaula {
+	background-color: #b5844b;
+	color: #fff;
+}
+
+.tb-agendateacher .reservado {
+	background-color: #b54b4b;
+	color: #fff;
+}
+
+
+/*** nova tabela de disponibilidade ***/
+/** visÃ£o mÃªs **/
+
+.table-dispon {
+	margin-top: 0;
+}
+
+.table-dispon td {
+	padding: 10px;
+	vertical-align: top;
+}
+
+.table-dispon__data {
+	margin: 0px 0 10px 0;
+	text-align: right;
+	font-family: Georgia;
+	font-size: 3.1rem;
+	font-style: italic;
+	color: #425b88;
+}
+
+.table-dispon__header {
+	background-color: #fff;
+	text-align: center;
+	padding: 15px 0;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	margin-top: 20px;
+}
+
+.table-dispon__header span {
+	color: #425b88;
+	font-size: 2.1rem;
+	vertical-align: middle;
+	display: inline-block;
+	padding: 0 20px;
+	font-weight: bold;
+}
+
+.card-dispon {
+	border-radius: 3px;
+	background-color: #fff;
+	padding: 7px;
+	margin-bottom: 20px;
+	border: 1px solid #fbfbfb;
+}
+
+.card-dispon:last-child {
+	margin-bottom: 0;
+}
+
+.card-dispon .--nome {
+	margin-bottom: 5px;
+	height: 20px;
+	overflow: hidden;
+}
+
+.card-dispon .round-avatar img {
+	width: 20px;
+	height: 20px;
+}
+
+.card-dispon__horarios {
+	display: flex;
+	flex-wrap: wrap;
+	border-radius: 10px;
+	margin-top: 5px;
+}
+
+.card-dispon__horarios div {
+	flex-grow: 1;
+	/* min-width: 15px; */
+	height: 10px;
+	border: 1px solid #ffffff30;
+	cursor: cell;
+}
+
+.card-dispon__horarios div:first-child {
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px
+}
+
+.card-dispon__horarios div:last-child {
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px
+}
+
+.card-dispon__horarios div:hover {
+	border: 1px solid #fff;
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+	transform: scale(1.5);
+	border-radius: 5px;
+
+	transition: transform .3s ease, box-shadow .2s ease;
+}
+
+.card-dispon__horarios div.--disponivel {
+	background-color: #4bb54b;
+}
+
+.card-dispon__horarios div.--emaula {
+	background-color: #b5844b;
+}
+
+.card-dispon__horarios div.--reservado {
+	background-color: #b54b4b;
+}
+
+.card-dispon--hover {
+	background-color: #fffcdd;
+}
+
+.card-dispon--selec {
+	background-color: #ffecdd;
+}
+
+.table-dispon.is-collapsed .card-dispon__horarios {
+	display: none;
+}
+
+.table-dispon.is-collapsed .card-dispon--selec .card-dispon__horarios {
+	display: flex;
+}
+
+
+/*** bordas formulário inválidado - ignite candidate ***/
+.validator input:valid,
+.validator select:valid {
+	transition: box-shadow .75s ease-in;
+}
+
+.validator input:invalid,
+.validator select:invalid {
+	box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+	transition: box-shadow .55s ease-in;
+}
+
+.validator .selectize-input:not(.invalid) {}
+
+.validator .selectize-input.invalid {
+	box-shadow: 0 0 5px rgba(255, 0, 0, 0.5) !important;
+	transition: box-shadow .55s ease-in;
+}
+
+
+/*** seletor de categorias - biblioteca ***/
+.la-listaalunos {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10px 10px;
+	grid-auto-flow: column;
+}
+
+.la-listaalunos.la-listaalunos--compact {
+	grid-template-columns: 1fr;
+}
+
+.la-listaalunos li p,
+.la-listaalunos li input.llt-checa-aluno {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.la-listaalunos li {
+	background-color: white;
+	padding: 12px 20px;
+	border-radius: 4px;
+	grid-column-start: 1;
+	grid-column-end: 1;
+}
+
+.la-listaalunos li:hover {
+	box-shadow: inset 0 0 6px #425b88;
+}
+
+.la-listaalunos li.selec {
+	background-color: rgba(255, 254, 209, 0.849);
+	grid-column-start: 2;
+	grid-column-end: 2;
+}
+
+.la-listaalunos a {
+	color: #3f5375;
+}

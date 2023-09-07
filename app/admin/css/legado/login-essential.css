@@ -1,0 +1,27 @@
+/*	
+ *	Tema personalizado
+ *  Área Essential / Login
+ *	
+ *  Coresphere Tecnologia Ltda
+ *  coresphe.re
+ * 
+ */
+html, body{
+	background-color: #F1F4DE;
+}
+ #header {
+	height: 75px;
+	background: #BED644;
+}
+h1 {
+	height: 62px;
+	margin-left: 10px;
+	margin-top: 7px;
+}
+#mid h2, #login h2{
+	color: #006DB8;
+}
+#box-login {
+	border: 1px solid #BED644;
+	box-shadow: 0 0 12px #878E62;
+}

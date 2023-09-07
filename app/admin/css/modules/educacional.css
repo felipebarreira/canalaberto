@@ -1,0 +1,317 @@
+/*-------------------------------------
+Supertabs
+-------------------------------------*/
+/*** abas mÃƒÆ’Ã‚Âªs ***/
+#abames-financeiro{
+	width: 100%;
+	height: 70px;
+	display: block;
+}
+#abames-financeiro div.menor,
+#abames-financeiro ul li{
+	display: block;
+	float: left;
+	width: 12.1428%;
+	box-sizing: border-box;
+	background-color: rgba(255, 255, 255, 0.12);
+	/* border: 1px solid #E3E3E3; */
+	padding: 16px 10px;
+	text-align: center;
+	border-top: 5px solid #C7C7C7;
+	cursor: pointer;
+	font-size: 1.1rem !important;
+	color: #808080;
+	height: 70px;
+	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
+	-moz-user-select: none; /* mozilla browsers */
+	-khtml-user-select: none; /* webkit (konqueror) browsers */
+	-ms-user-select: none; /* IE10+ */
+	box-shadow: inset 0px 0px 2px #c7c7c7;
+}
+#abames-financeiro div.menor{
+    width: 5%;
+    font-size: 22px;
+    font-weight: normal;
+    padding: 22px 10px;
+}
+#abames-financeiro div.menor:hover,
+#abames-financeiro ul li:hover{
+	border-top-color: #767676;
+	background-color: #fff;
+}
+#abames-financeiro div.menor.selec,
+#abames-financeiro ul li.selec{
+	border-top-color: #1db2e8;
+	background-color: #3f5375;
+	color: #ffffff;
+}
+#abames-menu-meses li p{
+	text-transform: uppercase;
+	font-size: 1.15rem;
+}
+#abames-menu-meses li p span{
+	text-transform: none;
+}
+#preListagem.pl-abames{
+	border-top:0;
+	margin-top: 5px;
+}
+#preListagem.pl-abames:after{
+	content:"";
+	display:table;
+	clear:both;
+}
+
+#abames-seldata{
+	position: relative;
+}
+#abames-menu-seldata{
+	display:none;
+	width: 350px;
+	height: 28px;
+	border: 1px solid #EAEAEA;
+	position: absolute;
+	right: 100%;
+	top: -5px;
+	background-color: #FFF;
+	z-index: 106;
+	box-shadow: 1px 1px 10px #CACACA;
+	padding: 21px 15px;
+}
+#abames-menu-seldata p span{
+	font-size: 14px;
+	font-weight: normal;
+	color: #8E8B8E;
+	margin: 0 15px;
+	vertical-align: text-top;
+}
+#abames-menu-seldata.abames-hover,
+#abames-menu-seldata.abames-focus{
+	display:block;
+}
+/*-------------------------------------
+Editar aula
+-------------------------------------*/
+
+
+#tabela-avaliacao tr:nth-child(1n+1).ta-linha-rr {
+	background: #D7E2D7;
+}
+#tabela-avaliacao tr:nth-child(2n+1).ta-linha-rr {
+	background: #ECF4EC;
+}
+
+.avatar-ess{
+	display: inline-block;
+	vertical-align: middle;
+	background-color: #C9C7C7;
+	border-radius: 100%;
+	margin-right: 5px;
+	overflow: hidden;
+	width: 35px;
+	text-align: center;
+	height: 35px;
+	line-height: 30px;
+}
+.avatar-ess.avatar-lp img{
+	width: 30px;
+}
+
+.tal-num{
+	width: 80px !important;
+}
+#tabela-avaliacao th,
+.tal-presenca,
+.tal-pont,
+.tal-aprov,
+.tal-home{
+	text-align: center !important;
+}
+.tal-presenca input{
+
+}
+.tal-nome{
+	font-size: 12px  !important;
+}
+.ta-center{
+	text-align: center !important;
+}
+
+/*-------------------------------------
+Listar/gerenciar aulas
+-------------------------------------*/
+/*** listagem nova ***/
+.listaaulas .listaaulas__colunacal,
+.listaaulas .listaaulas__colunatabela{
+	display: block;
+	box-sizing: border-box;
+}
+.listaaulas .listaaulas__colunacal{
+	width: 20%;
+	float:left;
+	padding: 15px 15px 15px 0;
+}
+.listaaulas .listaaulas__colunatabela{
+	width: 80%;
+	float:left;
+}
+
+.listaaulas__outrasopts{
+	text-align: center;
+}
+
+.lt-1680 #encapConteudo{
+	margin: 10px 0;
+}
+.lt-1680 .listaaulas .listaaulas__colunacal{
+	padding: 3px;
+}
+
+/*** calendario ***/
+.calendar-container {
+	position: relative;
+	width: 100%;
+}
+
+.lt-1440 .calendar-container{
+	width: 300px;
+	margin: 0 auto;
+}
+
+.calendar-container .calendar-header {
+	border-radius: 1em 1em 0 0;
+	background: #3f5375;
+	color: #fff;
+	padding: 13px 15px;
+}
+.month {
+	font-size: 1.35rem;
+	line-height: 1em;
+	text-transform: lowercase;
+}
+
+.calendar {
+	background: #fbfbfb;
+	border-radius: 0 0 1em 1em;
+	-webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+	box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+	color: #555;
+	padding: 15px;
+	width: 100%;
+}
+
+.calendar thead {
+	color: #e66b6b;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.calendar thead td{
+	font-family: "Consolas","Courier New", monospace;
+	font-size: 11px;
+}
+
+.calendar td {
+	padding: 8px 0;
+	text-align: center;
+	cursor: pointer;
+}
+
+.calendar tbody td{
+	border: 1px solid #fbfbfb;
+}
+.calendar tbody td:hover {
+	background: #cacaca;
+	color: #fff;
+}
+.ring-left,
+.ring-right {
+	position: absolute;
+	top: 30px;
+}
+
+.ring-left { left: 2em; }
+.ring-right { right: 2em; }
+
+.ring-left:before,
+.ring-left:after,
+.ring-right:before,
+.ring-right:after {
+	background: #fff;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+	box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+	content: "";
+	display: inline-block;
+	margin: 3px;
+	height: 18px;
+	width: 8px;
+}
+
+.calendar .today {
+	color: #e66b6b;
+	border: 1px solid #e66b6b;
+}
+.calendar .selec{
+	color: #5d8599;
+	border: 1px solid #5d8599;
+}
+.prev-month,
+.next-month {
+	color: #cacaca;
+}
+
+/* personalização de cores dos dias */
+.calendar .realizada{
+	background-color: #EDF2E7;
+	color: #65AE15;
+}
+.calendar .cancelada{
+	background-color: #EFE1E1;
+	color: #CB0000;
+}
+.calendar .suspensa{
+	background-color: #ffffc5;
+	color: #CB0000;
+}
+.calendar .agendada{
+	background-color: #E7E4EF;
+	color: #331A63;
+}
+
+
+
+/* adaptações responsiva */
+@media (max-width: 1440px){
+	.listaaulas .listaaulas__colunacal,
+	.listaaulas .listaaulas__colunatabela{
+		width: 100%;
+		display: inline-block;
+	}
+	.listaaulas .listaaulas__colunacal{
+		float: right;
+	}
+	.listaaulas .listaaulas__colunacal{
+		background-color: #ebebeb;
+	}
+	.calendar-container{
+		width: 300px;
+		margin: 0 auto;
+	}
+	.calendar td{
+		padding: 4px 0;
+	}
+}
+
+
+
+/*** largura das colunas ***/
+.listagem-aulas__th-0{
+	width: 100px;
+}
+.listagem-aulas__th-1{
+	width: 50px;
+}
+.listagem-aulas__th-3{
+	width: 190px;
+	text-align: center !important;
+}

@@ -1,0 +1,48 @@
+@charset "utf-8";
+/*!	
+ *	Ignite Colors
+ *  -----------------
+ *	corresponde a versão
+ *  Data: 22.06.2019 – Versão: 3.7
+ */
+
+:root {
+  --accent-color: #118ace; 
+
+  --dark-color: #001946;
+  --dark-color-90: rgba(0, 25, 70, 0.80) ; /* dark-color com 90% de transparência em rgba */
+  --dark-color2: #3c7fa9; /* 20% mais escuro que dark-color */
+
+  --overlay-color: #697c9c;
+  --soft-shadow: rgba(73, 105, 140, 0.5); /* ajustar apenas o rgb */
+}
+
+
+/*!	
+ *	Arkantas Colors
+ *  -----------------
+ *  for V2
+ *
+ */
+
+:root {
+    --ark-one-light-75:  #bfeefc;
+    --ark-one-light-50:  #7fddf8;
+    --ark-one:           #118ace;
+    --ark-one-dark-25:   #008cb5;
+    --ark-one-dark-50:   #005e79;
+    --ark-one-25a:       rgba(0, 186, 242, 0.25);
+
+    --ark-accent-light-75:  #f9c4e0;
+    --ark-accent-light-50:  #f389c2;
+    --ark-accent:           #e71485;
+    --ark-accent-dark-25:   #ad0f64;
+    --ark-accent-dark-50:   #740a43;
+    --ark-accent-25a:       rgba(231, 20, 133, 0.25);
+
+
+    --ark-input-border: #0cabd0;
+    --ark-input-shadow: rgba(12, 172, 208, 0.50);
+    --ark-input-shadow-25: rgba(12, 172, 208, 0.25);
+
+}

@@ -1,0 +1,322 @@
+/*	
+ *	Tema personalizado
+ *  Área Essential
+ *	
+ *  Coresphere Tecnologia Ltda
+ *  coresphe.re
+ * 
+ */
+
+#header {
+	height: 75px;
+	background: #BED644;
+}
+h1 {
+	height: 62px;
+	margin-left: 10px;
+	margin-top: 7px;
+}
+.header-links {
+	font-size: 15px;
+	font-weight: bold;
+	text-shadow: 1px 1px 0px #5D6B19;
+}
+.header-links a{
+	text-shadow: none !important;
+}
+
+#col .menu li a {
+	background: #006DB8;
+}
+#col .menu li a:hover, #col .menu li a.selec {
+	background: #3C5A98;
+}
+#col .menu {
+	border: 1px solid #F1F4DE;
+}
+.tituloFaixa {
+	height: 62px;
+	background-color: #FAFCF0;
+	border-bottom: 1px solid #FFF;
+}
+.sublinksFaixa {
+	height: 45px;
+	background-color: #FFF;
+	border-bottom: 1px solid #FFF;
+	border-top: 1px solid #F2F2F2;
+}
+#mid h2, #login h2 {
+	color: #006DB8;
+}
+#encapForm {
+	border-top: 5px solid #006DB8;
+}
+#footer {
+	background-color: #BED644;
+}
+#footer p.copy span,
+.header-links .logout {
+	color: #3C5A98;
+	font-weight: bold;
+}
+#footer-arv{
+	position: absolute;
+	top: -108px;
+	left: 12px;
+	width: 152px;
+	height: 110px;
+	display: block;
+	background: transparent url('../img/essential/arvore_rodape.png') no-repeat 0 0 ;
+}
+#preListagem {
+	border-top: 5px solid #006DB8;
+}
+
+/*** temas professores ***/
+.teacher #footer-arv{
+	background: transparent url('../img/essential/arvore_rodape_prof.png') no-repeat 0 0 ;
+}
+.teacher #header,
+.teacher #footer {
+	background-color: #006DB8;
+}
+.teacher h1 {
+	background: rgba(0, 0, 0, 0) url('../img/logo_prof.png') no-repeat 0 0;
+}
+.teacher .header-links {
+	text-shadow: 1px 1px 0px #192A6B;
+}
+.teacher #footer p.copy span, 
+.teacher .header-links .logout {
+	color: #BED644;
+}
+/*** padronizando com o seletor ***/
+.gtLabel span {
+	border-radius: 6px;
+	padding: 5px 7px;
+}
+.gtlCinza span{ background-color: #969696;color: #fff;}
+.gtlCinza{color: #969696;}
+
+
+/*** seletor essential ***/
+.smart-seletor{
+	font-size: 12px;
+	color: #fff;
+}
+.smart-seletor .ss-ico,
+.smart-seletor .ss-links a{
+	display: inline-block;
+	vertical-align: middle;
+}
+.smart-seletor .ss-atual{
+	font-size: 12px;
+	padding: 5px 7px;
+	border-radius: 10px;
+	position: relative;
+	z-index: 52;
+	margin-right: -2px;
+}
+/*
+.mozilla .smart-seletor,
+.mozilla .smart-seletor .ss-atual{
+	font-size: 11px;
+}
+*/
+.smart-seletor .ss-atual.ssl-a{
+	background-color: #E7E4EF;
+}
+.smart-seletor .ss-atual.ssl-r{
+	background-color: #EDF2E7;
+}
+.smart-seletor .ss-atual.ssl-c{
+	background-color: #EFE1E1;
+}
+.smart-seletor .ssa-legenda{
+	font-size: 11px;
+}
+.smart-seletor .ssl-a .ssa-legenda{
+	color: #331A63;
+}
+.smart-seletor .ssl-r .ssa-legenda{
+	color: #65AE15;
+}
+.smart-seletor .ssl-c .ssa-legenda{
+	color: #CB0000;
+}
+.smart-seletor .ss-ico{
+	margin-right: 0px;
+}
+.smart-seletor .ss-links{
+	position: relative;
+	z-index:51;
+}
+.smart-seletor .ss-links a{
+	color: #fff;
+	padding: 2px 9px;
+	margin-right: -3px;
+}
+.smart-seletor .ss-links a:hover{
+	text-decoration: none;
+}
+.smart-seletor .ss-links a{
+	-webkit-transform: translateX(-100px);
+	transform: translateX(-100px);
+	opacity: 0;
+	transition: all .35s ease;
+}
+/*.smart-seletor .ss-links a:nth-child(2){*/
+.smart-seletor .ss-links a:last-child{
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+/*.smart-seletor label*/
+.ss-label{
+	font-style: italic;
+	color: #000;
+	margin-left: -120px;
+}
+.ss-label2{
+	margin-left: 20px;
+}
+
+
+#listagem tr:hover .smart-seletor .ss-links a{
+	-webkit-transform: translateX(0px);
+	transform: translateX(0px);
+	opacity: 1;
+	transition: all .35s ease;
+}
+#listagem tr:hover .smart-seletor .ss-links a.ssl-a{
+	background-color: #8A8B96;
+}
+#listagem tr:hover .smart-seletor .ss-links a.ssl-r{
+	background-color: #65AE15;
+}
+#listagem tr:hover .smart-seletor .ss-links a.ssl-c{
+	background-color: #CB0000;
+}
+#listagem tr:hover .smart-seletor .ss-label{
+	visibility: hidden;
+}
+#listagem tr:hover .smart-seletor .ss-label2{
+	visibility: visible;
+}
+
+/*** formularios disabled ***/
+select:disabled,
+input:disabled{
+	opacity: 0.45;
+}
+
+/*** css para listagem de arquivos professores ***/
+.mmFileDesc div{
+}
+.mmFileDesc p{
+	text-align: right;
+	cursor: pointer;
+	font-size: 10px;
+	margin-top: -25px;
+}
+.mmFileDesc p:hover{
+	text-decoration: underline;
+}
+.modoInline .mmFileDesc p{
+	margin-top: 0 !important;
+}
+
+.mmFileListaArquivos li{
+	position: relative;
+	float: left;
+	width: 33%;
+}
+.mmFileListaArquivos .mmilItem{
+	margin: 5px;
+	box-shadow:1px 1px 2px silver;
+	-moz-box-shadow:1px 1px 2px silver;
+	-webkit-box-shadow:1px 1px 2px silver;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	background-color: #fff;
+	padding: 14px;
+	
+	position: relative;
+}
+.mmFileListaArquivos .ico{
+	vertical-align:middle;
+	margin: 9px 0 0 9px;
+}
+.mmFileListaArquivos a{
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.mmilMiniatura{
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin-right: 5px;
+}
+.mmilBts{
+	float: right;
+}
+.mmfTextos{
+	float: left;
+	margin: 2px 0 0px 0 !important;
+}
+.mmfTitulo{
+	font-weight: bold;
+	color: #6A6A6A;
+	margin-bottom: 2px;
+}
+.mmilCampo{
+	float: left;
+	width: 95% !important;
+	margin: 0 !important;
+}
+.fieldset-claro{
+	background-color: #fff;
+	margin: 19px 0 8px 0;
+}
+
+/*** avatar principal ***/
+#ginga-avatar{
+	float: right; 
+	width: 46px; 
+	height: auto; 
+	margin-left: 8px; 
+	border-radius: 100%;
+}
+
+
+/*** estilização do avatar ***/
+
+.avatar-ess{
+	display: inline-block;
+	vertical-align: middle;
+	background-color: #C9C7C7;
+	border-radius: 15px;
+	margin-right: 5px;
+	overflow: hidden;
+}
+.avatar-ess.avatar-lp img{
+	width: 30px;
+}
+.ta-linha-rr .avatar-ess{
+	box-shadow: 0px 0px 5px #77BE77;
+	transition: all .35s ease;
+}
+
+/*** bolha de notificação ***/
+.bolha-notif{
+	background-color: #D52432;
+	border-radius: 100%;
+	padding: 7px;
+	color: #FFF;
+	float: right;
+	line-height: 60%;
+	text-indent: 0;
+	margin: 5px 5px 0 0;
+	font-size: 12px;
+}

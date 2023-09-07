@@ -1,0 +1,77 @@
+				html, body{
+					height: 100%;
+					background-color:#e7e7e7;
+				}
+				h2{
+					margin-left: 0 !important;
+					line-height: 38px !important;
+				}
+				#login{
+					text-align: center;
+					width: 100%;
+					height: 100%;
+				}
+				/* corrigir */
+				#box-login #header p{
+					text-align: left;
+					padding-top: 29px;
+					color: #fff;
+					text-indent: 13px;
+					
+				}
+				#box-login{
+					border: 1px solid #8b8d8f;
+					display: inline-block;
+					*zoom: 1; *display: inline;
+					width: 500px;
+					height: auto;
+					min-height: 272px;
+					
+					box-shadow: 0 0 12px #66676a;
+
+				}
+				.login-c{
+					text-align: left;
+					padding: 10px;
+					background-color:#FFF;
+				}
+				.login-c label{
+					color: #777777;
+					font-size: 13px;
+				}
+				.campo-login{
+					border-color:#B2B2B2 #D6D6D6 #EBEBEB;
+					border-style:solid;
+					border-width:1px;
+					-moz-border-radius:3px 3px 3px 3px;
+					background:url("../img/campo2.jpg") repeat-x scroll 0 0 transparent;
+					width: 230px;
+					height: 25px;
+				}
+				.cp-login{
+					float: left;
+					width: 230px;
+					margin-bottom: 8px;
+				}
+				.cp-login.prim{
+					margin-right: 15px;
+				}
+				#login-lembrar{
+					margin-right: 7px;
+				}
+				#login-credi{
+					text-align: right;
+					vertical-align: middle;
+				}
+				#login-credi *{
+					vertical-align: middle;
+				}
+				.lc2{
+					background-color:#F9F9F9;
+				}
+				.lc2 a:hover{
+					text-decoration: none;
+				}
+				#msg{
+					margin: 1px 0px 15px 0;
+				}
