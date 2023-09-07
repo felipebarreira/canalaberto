@@ -1,0 +1,26 @@
+version: "3"
+services:
+  # Web service layer
+  apache:
+    build:
+      context: ./apache
+    image: 'php:8.2-apache'
+    volumes:
+      - "./app:/var/www/html"
+    ports:
+      - "80:80"
+
+  # Data persistence service layer
+  mysql:
+    image: mysql:5.7.20
+    command: mysqld --sql_mode=""
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_canalaberto
+    volumes:
+      - ./mysql/initial_data:/docker-entrypoint-initdb.d
+
+volumes:
+  db_data:
