@@ -63,4 +63,37 @@ Class cRegistryController extends baseController{
 	
 	}
 	
+	public function update(){
+		
+		# load
+		$this->init();
+		$this->load->post = $this->load->model->getPost()->getValores();
+		
+		# model
+		$this->load->template->msg = $this->load->model->update();
+		
+		# load vars template
+		$this->load->template->title 	= "Aprovação Registro " . $this->load->registry->getKey();		
+
+		$this->load->template->registry = $this->load->registry;
+		
+		
+		# views
+		$this->load->template->show('index');
+			$this->load->template->show('complaint/update-registry');
+		$this->load->template->show('rodape');
+		
+	}
+
+
+	public function delete(){
+
+		# load
+		$this->init();
+
+		# model
+		$this->load->model->delete();
+	}
+	
 }
+?>

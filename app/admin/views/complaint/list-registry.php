@@ -134,8 +134,8 @@
 
 						</p>
 
-						<div class="main-list__bts pull-right">
-
+						<div class="main-list__bts pull-right" data-ignite-confirm-label="Você deseja excluir o registro %key% ?" data-ignite-confirm-config='{ "desc" : "Isso excluirá permanentemente o registro no sistema." , "actionLabel" :  "Sim, desejo excluir esse registro" }'>
+							<a href="?rt=<?php echo $gets['rt']; ?>/update&amp;id-registry=<?php echo $list->get($i)->registry_id; ?>" class="btn --small --blue --border acao-ver"> <i class="far fa-eye"></i> Visualizar </a>
 						</div>
 					</div>
 

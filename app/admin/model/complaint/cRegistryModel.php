@@ -1,40 +1,37 @@
 <?php
-class cRegistryModel extends baseModelList
-{
+class cRegistryModel extends baseModelList{
 
 	public $hasFilter = false;
 
-	public function __construct($objRegistro)
-	{
+	public function __construct($objRegistro){
 		$this->setRegistro($objRegistro);
 		$this->filterValidation();
 		$this->hasFilter();
-
+		
 		$busca = "";
 		$gets  = $this->getGets();
-		if (!empty($gets['busca']) && !empty($gets['opcao']))
-			$busca = "&amp;busca=" . urlencode($gets['busca']) . "&amp;opcao=" . $gets['opcao'];
-
+		if(!empty($gets['busca']) && !empty($gets['opcao']))
+			$busca = "&amp;busca=".urlencode($gets['busca'])."&amp;opcao=".$gets['opcao'];
+		
 		$itensBusca = new ArrayList;
+			
+			$itensBusca->addToPos(0, array("nome" => "Token" , "name" => "registry_key"));
+			$itensBusca->addToPos(1, array("nome" => "Nome" , "name" => "registry_name"));
+			$itensBusca->addToPos(2, array("nome" => "E-mail" , "name" => "registry_email"));
 
-		$itensBusca->addToPos(0, array("nome" => "Token", "name" => "registry_key"));
-		$itensBusca->addToPos(1, array("nome" => "Nome", "name" => "registry_name"));
-		$itensBusca->addToPos(2, array("nome" => "E-mail", "name" => "registry_email"));
-
-
+		
 		$this->setItensBusca($itensBusca);
 	}
 
 	/*
 	 LIST- QUERY, FILTERS AND VALIDATIONS
 	 */
-	private function hasFilter()
-	{
+	private function hasFilter(){
 		$gets  = $this->getGets();
 
-		if (
+		if(
 			!empty($gets['busca']) && !empty($gets['opcao'])
-		) {
+		){
 			$this->hasFilter = true;
 			return true;
 		}
@@ -42,14 +39,12 @@ class cRegistryModel extends baseModelList
 		return false;
 	}
 
-	public function getFilter()
-	{
+	public function getFilter(){
 		$gets  = $this->getGets();
 		return '&addClass=' . $gets['addClass'];
 	}
 
-	private function filterQuerySearch()
-	{
+	private function filterQuerySearch(){
 
 		$gets   = $this->getGets();
 		$search = null;
@@ -57,23 +52,21 @@ class cRegistryModel extends baseModelList
 		# special filters
 
 		# regular filter search
-		if (!empty($gets['busca']) && !empty($gets['opcao']))
-			$search = " and " . $gets['opcao::escape'] . " LIKE '%" . $gets['busca::escape'] . "%' ";
+		if(!empty($gets['busca']) && !empty($gets['opcao']))
+			$search = " and ".$gets['opcao::escape']." LIKE '%".$gets['busca::escape']."%' ";
 
 
 		return $search;
 	}
 
-	private function filterValidation()
-	{
+	private function filterValidation(){
 
 		$gets  = $this->getGets();
 
 		return true;
 	}
 
-	private function filterByFields()
-	{
+	private function filterByFields(){
 
 		$gets  = $this->getGets();
 		$where = ' and 1=1';
@@ -81,8 +74,7 @@ class cRegistryModel extends baseModelList
 		return $where;
 	}
 
-	private function filterByInners()
-	{
+	private function filterByInners(){
 
 		$gets  = $this->getGets();
 		$inner = '';
@@ -90,19 +82,17 @@ class cRegistryModel extends baseModelList
 		return $inner;
 	}
 
-	public function setQuery($query = '')
-	{
+	public function setQuery($query = ''){
 
-		$query = "Select *from tb_complaint_registry
-					" . $this->filterByInners() . "
+ 		$query = "Select *from tb_complaint_registry
+					".$this->filterByInners()."
 					where registry_status!=3 " . $this->filterByFields() . $this->filterQuerySearch();
 
 		//echo $query; exit;
 		$this->query = $query;
 	}
 
-	public function getWhereByFilters()
-	{
+	public function getWhereByFilters(){
 		return "registry_status!=3 " . $this->filterByFields() . $this->filterQuerySearch();
 	}
 
@@ -110,4 +100,63 @@ class cRegistryModel extends baseModelList
 	/*
 	 CRUD - ADD/UPDATE/STATUS/DELETE
 	 */
+
+	public function getPost(){
+		$objPost = new Variavel;
+		$objPost->setTipo('post');
+		$objPost->setCampos(
+			array(
+				'send'  => 'text',
+				'btEnviar'  => 'null',
+				'btSalvar'  => 'null',
+
+				'response' => 'text',
+				'status' => 'text'
+			)
+		);
+		return $objPost;
+	}
+
+	private function formValidation(){
+
+		$post 	  = $this->load->post;
+		$msg 	  = array();
+		$messages = array();
+
+
+			if (count($messages)) {
+			    foreach ($messages as $message) {
+			        @$msg['det-acao'] .= $message . "<br />";
+			    }
+
+			    $msg['tipo-acao'] = "error";
+			    $msg['msg-acao'] = "Ops! Ocorreu um erro na validação do formulário";
+			}
+
+		return $msg;
+	}
+
+	public function update(){
+
+		#
+		$gets = $this->load->gets->getValores();
+		$post = $this->load->post;
+
+		$msg  = array();
+		$this->load->registry = new \Complaint\Registry($gets['id-registry::escape']);
+
+		if(!is_numeric($this->load->registry->getId()))
+			header("Location: ?rt=cRegistry");
+
+	}
+
+
+	public function delete(){
+
+		# load vars
+		$gets = $this->load->gets->getValores();
+		$obj = new \Complaint\Registry($gets['id-registry::escape']);
+
+	}
+
 }
