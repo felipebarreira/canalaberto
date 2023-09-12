@@ -112,7 +112,7 @@
 				$template->registry = $registry;
 			?>
 				<!-- inicio :: card listagem -->
-				<li class="main-list__card main-list--rdvApproval no-gutter clearfix">
+				<li class="main-list__card row no-gutter clearfix">
 					<div class="main-list__header clearfix col-md-12">
 						<p class="tit pull-left">
 							<?php echo $list->get($i)->registry_key; ?>
@@ -140,7 +140,8 @@
 					</div>
 
 
-					<?php if ($registry->getName() != "") { ?><p class="col-md-2"><strong>Nome:</strong><br> <?php echo $registry->getName(); ?><br> </p><?php } ?>
+					<?php if ($registry->getName() != "") { ?><p class="col-md-3"><strong>Nome:</strong><br> <?php echo $registry->getName(); ?><br> </p><?php } ?>
+					<?php if ($registry->getEmail() != "") { ?><p class="col-md-3"><strong>E-mail:</strong><br> <?php echo $registry->getEmail(); ?><br> </p><?php } ?>
 				</li>
 				<!-- fim :: card listagem -->
 			<?php } ?>

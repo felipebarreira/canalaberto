@@ -29,4 +29,4 @@ try {
 	print $e->getMessage();
 }
 
-ob_end_flush();
+@ob_end_flush();
