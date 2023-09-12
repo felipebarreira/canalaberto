@@ -1,8 +1,2 @@
-vendor/
-node_modules/
-keynote/
-demo/
-/.sublime-grunt.cache
 composer.lock
 package-lock.json
-.htaccess
