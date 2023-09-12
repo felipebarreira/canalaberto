@@ -18,6 +18,18 @@ docker-compose build
 docker-compose up
 ```
 
+> Disponível em http://localhost, caso a porta 80 não seja modificada no arquivo docker-compose.yml
+
+
+## Painel administrativo
+
+O acesso ao painel administrativo se dá através do link http://localhost/admin
+
+Login: admin@impacta.com.br
+Senha: done#2023
+
+>> 🔐 Gerenciamento de acessos administrativos disponível no menu "Configurações > Administradores"
+
 ## Observações e notas adicionais
 
 **GitHub do projeto:** https://github.com/felipebarreira/canalaberto
