@@ -1,7 +1,7 @@
 Documentação Técnica – Canal Aberto
 ===
 
-![logo](https://appx-institucional.s3.sa-east-1.amazonaws.com/help/logo-canal-aberto-fit.png)
+![logo](https://felipegallo.s3.sa-east-1.amazonaws.com/fit/software-product/logo-canal-aberto-fit.png)
 
 🚀 Bem-vindo a documentação do **Canal Aberto** - desenvolvido para fins academicos na Faculdade Impacta Tecnologia.
   
@@ -26,9 +26,10 @@ docker-compose up
 O acesso ao painel administrativo se dá através do link http://localhost/admin
 
 Login: admin@impacta.com.br
+
 Senha: done#2023
 
->> 🔐 Gerenciamento de acessos administrativos disponível no menu "Configurações > Administradores"
+> 🔐 Gerenciamento de acessos administrativos disponível no menu "Configurações > Administradores"
 
 ## Observações e notas adicionais
 
