@@ -96,4 +96,3 @@ Class cRegistryController extends baseController{
 	}
 	
 }
-?>

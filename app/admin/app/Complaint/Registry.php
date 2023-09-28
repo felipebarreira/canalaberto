@@ -382,7 +382,7 @@ class Registry
 				throw new Exception("throw exception");
 
 
-			$boolean = self::$dao->update("registry_status=3", "registry_id='" . $this->getId() . "'");
+			$boolean = self::$dao->remove("registry_id='" . $this->getId() . "'");
 			if ($boolean == false)
 				throw new Exception("throw exception");
 
