@@ -15,6 +15,7 @@
 
 		<ul>
 			<li><a href="?rt=listAccess">Administradores</a></li>
+			<li><a href="?rt=logs">Logs do sistema</a></li>
 		</ul>
 	</li>
 </ul>

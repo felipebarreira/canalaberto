@@ -176,10 +176,8 @@ class cRegistryModel extends baseModelList
 			if (!is_numeric($obj->getId()))
 				throw new exception("Registro não encontrado.");
 
-			$obj->setStatus(3);
-			$obj->setUpdated(date('Y-m-d H:i:s'));
 
-			if (!$obj->update())
+			if (!$obj->delete())
 				throw new exception("Não é possível excluir.");
 
 			# return

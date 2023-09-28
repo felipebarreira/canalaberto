@@ -56,6 +56,16 @@ if (@$_GET['rt'] != "index/status")
 	$objRegistro->status = $objRegistro->administrador->isSessionAuthenticated();
 
 $objRegistro->objLog = ArkantasLog::singleton();
+$objRegistro->objLog->setClassLogin("Administrador");
+$objRegistro->objLog->setEntidadeLogin("administracao");
+$objRegistro->objLog->setFieldClass($authenticatedFields);
+
+$objRegistro->objLog->addEntidade("administracao", true);
+$objRegistro->objLog->addEntidade("tb_administracao", true);
+
+# logs modulo :: complaint
+$objRegistro->objLog->addEntidade("complaint_registry", true);
+$objRegistro->objLog->addEntidade("tb_complaint_registry", true);
 
 # APP :: Instantiating default classes on Project @null
 $objVariavel = new Variavel;

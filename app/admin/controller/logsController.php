@@ -7,7 +7,7 @@ Class logsController Extends baseController{
 		$objGet = $this->load->gets;
 		$gets = $objGet->getValores();
 		
-		# validação
+		# validacao
 		$this->load->administrador->isAuthenticated(false);
 		
 		# load vars template
@@ -46,4 +46,3 @@ Class logsController Extends baseController{
 	
 	}
 }
-?>
