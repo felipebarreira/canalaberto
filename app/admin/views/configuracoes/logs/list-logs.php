@@ -21,7 +21,7 @@
 		<div class="list-aux">
 
 			<form action="#" method="get" class="ark-form">
-				<input type="hidden" name="rt" value="listAccess" />
+				<input type="hidden" name="rt" value="logs" />
 
 				<fieldset>
 					<legend class="dark">BUSCAR</legend>
