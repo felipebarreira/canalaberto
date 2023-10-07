@@ -160,6 +160,29 @@ class cRegistryModel extends baseModelList
 
 		if (!is_numeric($this->load->registry->getId()))
 			header("Location: ?rt=cRegistry");
+
+
+		if ($post['send'] != "on")
+			return $msg;
+
+		// validation
+		$msg = $this->formValidation();
+		if (count($msg) > 0)
+			return $msg;
+
+
+		$this->load->registry->setResponse(nl2br($post['response']));
+		$this->load->registry->setStatus($post['status']);
+		$this->load->registry->setUpdated(date('Y-m-d H:i:s'));
+
+		# update action
+		$up = $this->load->registry->update();
+		if (!$up)
+			return array("tipo-acao" => "erro", "msg-acao" => "Falha ao editar", "det-acao" => "Tente novamente ou contacte os administradores.");
+
+
+		#
+		header("Location: ?rt=cRegistry&tipo-acao=sucess&msg-acao=" . urlencode("Status atualizado com sucesso.") . "&det-acao=" . urlencode('Status do Registro ' . $this->load->registry->getKey() . ' atualizado com sucesso!'));
 	}
 
 
