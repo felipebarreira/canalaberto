@@ -21,7 +21,7 @@
 <form action="#" method="post" class="ark-form" enctype="multipart/form-data">
 
 	<fieldset>
-		<legend>Geral</legend>
+		<legend>Informações</legend>
 
 		<div class="row">
 			<div class="col-md-12">
@@ -60,37 +60,38 @@
 
 	</fieldset>
 
-	<?php if ($gets["t"] != "view") { ?>
-		<fieldset>
-			<legend>Credenciais de acesso</legend>
 
-			<div class="row">
+	<fieldset>
+		<legend>Gerenciamento</legend>
 
-				<div class="col-md-12">
-					<label>
-						<b>Status</b>
-						<div class="select-wrap">
-							<select name="status" id="">
-								<option value="1" <?php echo ($registry->getStatus() == 1) ? 'selected' : ''; ?>>Concluído</option>
-								<option value="0" <?php echo ($registry->getStatus() == 0) ? 'selected' : ''; ?>>Aberto</option>
-								<option value="2" <?php echo ($registry->getStatus() == 2) ? 'selected' : ''; ?>>Em Andamento</option>
-							</select>
-						</div>
-					</label>
-				</div>
+		<div class="row">
 
-				<div class="col-md-12">
-					<label class="">
-						<b class="">Resposta</b>
-						<textarea name="response"><?php echo strip_tags($registry->getResponse()); ?></textarea>
-					</label>
-				</div>
-
+			<div class="col-md-12">
+				<label>
+					<b>Status</b>
+					<div class="select-wrap">
+						<select name="status" id="" <?php echo ($gets["t"] == "view") ? "disabled" : ""; ?>>
+							<option value="1" <?php echo ($registry->getStatus() == 1) ? 'selected' : ''; ?>>Concluído</option>
+							<option value="0" <?php echo ($registry->getStatus() == 0) ? 'selected' : ''; ?>>Aberto</option>
+							<option value="2" <?php echo ($registry->getStatus() == 2) ? 'selected' : ''; ?>>Em Andamento</option>
+						</select>
+					</div>
+				</label>
 			</div>
 
+			<div class="col-md-12">
+				<label class="">
+					<b class="">Resposta</b>
+					<textarea name="response" <?php echo ($gets["t"] == "view") ? "disabled" : ""; ?>><?php echo strip_tags($registry->getResponse()); ?></textarea>
+				</label>
+			</div>
 
-		</fieldset>
+		</div>
 
+
+	</fieldset>
+
+	<?php if ($gets["t"] != "view") { ?>
 		<p>
 			<input type="hidden" name="send" value="on">
 			<button class="btn --lg --one">Salvar</button>
