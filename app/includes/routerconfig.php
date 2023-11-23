@@ -50,6 +50,21 @@ $rc->add(array(
 	)
 ));
 
+$rc->add(array(
+	"controller" => "index/status",
+	"url" => "status",
+	"get" => array(
+		array(
+			0 => array("name" => "rt", "type" => "text"),
+			1 => array("name" => "token", "type" => "text")
+		),
+		array(
+			0 => array("name" => "rt", "type" => "text"),
+			1 => array("name" => "get", "type" => "array")
+		)
+	)
+));
+
 
 
 $rc->load();
