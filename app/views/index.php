@@ -89,10 +89,37 @@
 
 
 							<div class="row" style="padding: 4rem 0 0 0;">
-								<div class="col-md-12">
+								<div class="col-md-6">
 									<button class="btn --one --block --giant --round btn-abrir-denuncia"> <i class="fal fa-bullhorn"></i> Faça seu relato</button>
 								</div>
+								<div class="col-md-6">
+									<button class="btn --accent --block --giant --round btn-abrir-acompanhe"> <i class="fal fa-search"></i> Acompanhe seu relato</button>
+								</div>
 							</div>
+						</div>
+					</div>
+				</div><!-- /.formoso-welcome -->
+
+			</div>
+
+			<div class="formoso-main --antique form-acompanhe wrap" style="padding-top: 2rem;display:none;">
+				<div class="formoso-welcome">
+					<div class="row justify-content-center">
+						<div class="col-md-10">
+							<h1>Canal Aberto - Acompanhamento</h1>
+							<h2>Acompanhe seu relato</h2>
+							<form action="<?php echo HTTP_DOMAIN . 'status/'; ?>" method="get">
+								<div class="form-group" style="padding: 4rem 0 0 0;">
+
+									<div class="col-md-8">
+										<input type="text" name="token" placeholder="digite o número do protocolo" class="--round --giant --block" value="" style="text-align:center;">
+									</div>
+									<div class="col-md-4">
+										<button class="btn --one --block --giant --round"><i class="far fa-search"></i> Acompanhe seu relato</button>
+									</div>
+
+								</div>
+							</form>
 						</div>
 					</div>
 				</div><!-- /.formoso-welcome -->
