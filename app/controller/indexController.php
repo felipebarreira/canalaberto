@@ -74,4 +74,26 @@ class indexController extends baseController
 			$this->load->template->show('erro-confirmacao');
 		}
 	}
+
+	public function status()
+	{
+
+		# load vars
+		$this->init();
+		$gets = $this->load->gets;
+
+		# model
+		$registry = new \Complaint\Registry($gets['token']);
+
+		$this->load->template->title 	   = "Denúncia " . $gets['token'] . " em Canal Aberto" . " – " . NAMEPROJECT;
+		$this->load->template->description = "";
+		$this->load->template->keywords	   = "";
+		$this->load->template->metatags	   = "";
+		$this->load->template->pageClass   = "";
+
+		$this->load->template->registry = $registry;
+
+		# template
+		$this->load->template->show('registro-status');
+	}
 }
